@@ -1,14 +1,14 @@
 const express = require ('express')
 const morgan = require('morgan')
-const { propfind } = require('./routes/empleados.routes')
 
-const app = express();
+const app = express()
 
 
-app.set('port', process.env.PORT || 4000)
+app.set('port', process.env.PORT || 4000);
 
 app.use(morgan('dev'))
-app.use(require('./routes/empleados.routes'))
+
+app.use("/api/mcgyms" , require('./routes/mcgym.routes.js'))
 
 
 
