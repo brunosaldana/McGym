@@ -15,10 +15,10 @@ router.post('/', mcgymsCtrl.createmcgym);
 router.get('/:id', mcgymsCtrl.getmcgym);
 
 //PUT
-router.put('/:id', mcgymsCtrl.putmcgym);
+//router.put('/:id', mcgymsCtrl.putmcgym);
 
 //DELETE
-router.put('/:id', mcgymsCtrl.deletemcgym);
+router.delete('/:id', mcgymsCtrl.deletemcgym);
 
 
 module.exports = router

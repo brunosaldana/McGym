@@ -8,7 +8,7 @@ app.set('port', process.env.PORT || 4000);
 
 app.use(morgan('dev'))
 
-app.use("/api/mcgyms" , require('./routes/mcgym.routes.js'))
+app.use("/api/mcgym" , require('./routes/mcgym.routes.js'))
 
 
 
