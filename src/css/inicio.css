@@ -1,0 +1,29 @@
+*,
+html,
+body {
+}
+
+#principal {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  padding: 2vh;
+}
+
+.cabecera {
+  border: 1px solid black;
+  width: 100%;
+  height: 20%;
+}
+
+.rutas{
+
+}
+
+.cuerpo{
+
+}
+
+.pie{
+    
+}
