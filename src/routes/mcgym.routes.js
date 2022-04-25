@@ -1,24 +1,16 @@
-const { Router } = require('express')
-const router = Router()
+const express = require("express");
+const router = express.Router();
 
+const employee = require("../controllers/mcgym.controller");
 
-const mcgymsCtrl = require('../controllers/mcgym.controller.js')
+router.get("/", employee.getEmployees);
 
-//GET
-router.get('/', mcgymsCtrl.getmcgyms);
+router.post("/", employee.createEmployee);
 
+router.get("/:id", employee.getEmployee);
 
-//POST
-router.post('/', mcgymsCtrl.createmcgym);
+router.put("/:id", employee.editEmployee);
 
-//GET
-router.get('/:id', mcgymsCtrl.getmcgym);
+router.delete("/:id", employee.deleteEmployee);
 
-//PUT
-//router.put('/:id', mcgymsCtrl.putmcgym);
-
-//DELETE
-router.delete('/:id', mcgymsCtrl.deletemcgym);
-
-
-module.exports = router
+module.exports = router;

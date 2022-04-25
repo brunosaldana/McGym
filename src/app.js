@@ -1,15 +1,18 @@
-const express = require ('express')
-const morgan = require('morgan')
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
 
-const app = express()
+const app = express();
 
+// Settings
+app.set("port", process.env.PORT || 4000);
 
-app.set('port', process.env.PORT || 4000);
+// Middlewares
+app.use(cors());
+app.use(morgan("dev"));
+app.use(express.json());
 
-app.use(morgan('dev'))
-
-app.use("/api/mcgym" , require('./routes/mcgym.routes.js'))
-
-
+// Routes
+app.use("/index", require("./routes/mcgym.routes"));
 
 module.exports = app;

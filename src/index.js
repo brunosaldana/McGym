@@ -1,6 +1,7 @@
-require ('./database')
-const app = require('./app')
+const app = require("./app");
 
+require("./database");
 
-app.listen(app.get('port'));
-console.log('Server on port', app.get('port'));
+app.listen(app.get("port"), () => {
+  console.log(`server on port ${app.get("port")}`);
+});
