@@ -3,12 +3,9 @@ const { Schema } = mongoose;
 
 const employeeSchema = new Schema(
   {
+    id : {type: Number, required: true},
     name : {type: String, required: true},
     ocupacion : {type: String, required: true},
-    edad : {type: Number, required: true},
-    dni : {type: Number, required: true},
-    correo : {type: String, required: true},
-    direccion : {type: String, required: true},
   },
   {
     versionKey: false,
