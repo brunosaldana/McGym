@@ -1,1 +1,41 @@
-<p>employee works!</p>
+<div class = "row">
+    <div class = "col-md-4">
+        <div class = "card">
+            <div class = "card-body">
+                <h1> Crear Empleado!</h1>
+
+            </div>
+        </div>
+        
+    </div>
+    <div class = "col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        ID
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Ocupacion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeService.employees">
+                    <td>{{ employee.id }}</td>
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.ocupacion }}</td>
+                </tr>
+                    
+            </tbody>
+        </table>
+
+
+</div>
