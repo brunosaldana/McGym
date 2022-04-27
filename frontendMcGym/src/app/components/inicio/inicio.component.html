@@ -1,0 +1,136 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css' rel='stylesheet' />
+
+    <!-- <script src="../js/mousetrap.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<div class="principal">
+    <div id="header">
+        <div class="container">
+            <a class="navbar-brand" href="/inicio">McGym</a>
+        </div>
+        <div class="form">
+            <form action=""> 
+                <div class="login">
+                    <label for="">Usuario</label>
+                    <input type="text">
+                    <label for="">Contraseña</label>
+                    <input type="password">
+                </div>
+                <div class="entrar">
+                    <a href="">He olvidado la contraseña</a>
+                    <button>LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="visitUsContainer">
+
+        <div id="visit" class="visitTitle">
+            <h2>VISITA NUESTRO GIMNASIO MCGYM AQUI!</h2>
+        </div>
+
+        <div id='map' style='width: 95vw; height: 90vh;'>
+        
+        </div>
+
+            <script type="text/javascript">
+                const element = document.getElementById("")
+            </script>
+
+            <script type="text/javascript">
+
+            // TO MAKE THE MAP APPEAR YOU MUST
+            // ADD YOUR ACCESS TOKEN FROM
+            // https://account.mapbox.com
+
+            Mapboxgl.accessToken = environment.mapboxKey;
+
+            this.mapa = new Mapboxgl.Map({
+            container: 'map', // container ID
+            style: 'mapbox://styles/mapbox/streets-v11', // style URL
+            center: [-74.5, 40], // starting position
+            zoom: 9 // starting zoom
+            });
+
+            const marker1 = new mapboxgl.Marker()
+            .setLngLat([1.72878 , 41.23112])
+            .addTo(map);
+
+            var geolocate = new mapboxgl.GeolocateControl({
+                positionOptions: {
+                enableHighAccuracy: true
+                },
+                // When active the map will receive updates to the device's location as it changes.
+                trackUserLocation: true,
+                // Draw an arrow next to the location dot to indicate which direction the device is heading.
+                showUserHeading: true
+                })
+
+            map.addControl(geolocate)
+
+            var el = document.createElement('div');
+            el.className = 'marker';
+
+            // make a marker for each feature and add to the map
+            
+            let lon,lat;
+            
+            geolocate.on('geolocate', function(e) {
+                lon = e.coords.longitude;
+                lat = e.coords.latitude;
+                var position = [lon, lat];
+
+                console.log(position);
+
+                const popup = new mapboxgl.Popup({ closeOnClick: true })
+                    .setLngLat(position)
+                    .setHTML('<h3>Tu estàs aquii!</h3>')
+                    .addTo(map);
+                
+                Mousetrap.bind('ctrl+alt+g', function(e) {
+                    let message = `Position X: ${lon}\nPosition Y: ${lat}`
+                    alert(message)
+                });
+                Mousetrap.bind('ctrl+alt+c', function(e) {
+                    map.flyTo({
+                        center: [1.72878 , 41.23112],
+                        zoom: 17,
+                        essential: true // this animation is considered essential with respect to prefers-reduced-motion
+                    });
+                });
+            });
+
+        </script>   
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <div>
+                <h4 class="footer-text">Nuestras redes</h4>
+            </div>
+            <div class="icons">
+                <i class="fa-brands fa fa-twitter" style="font-size:48px;" ></i>
+                <i class="fa-brands fa fa-facebook" style="font-size:48px;"></i>
+                <i class="fa-brands fa fa-github" style="font-size:48px;"></i>
+                <i class="fa-brands fa fa-linkedin" style="font-size:48px;"></i>
+            </div>
+        </div>
+    </footer>
+
+        <a class="btn btn-dark" type="button" href="/employee">ATRAS<button class="control backlink"></button></a>
+</div>
+</body>
