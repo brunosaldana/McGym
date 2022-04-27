@@ -9,6 +9,15 @@ export class EmployeeService {
   
   URL_API = 'http://localhost:4000/index';
 
+  selectedEmployee: Employee = {
+      id: '',
+      name: '',
+      email: '',
+      ocupacion: ''
+  
+    };
+  
+
   employees: Employee[] = [];
 
 
@@ -18,6 +27,9 @@ export class EmployeeService {
   getEmployees(){
     return this.http.get<Employee[]>(this.URL_API);
     
+  }
+  createEmployee(employee: Employee){
+    return this.http.post(this.URL_API,employee);
   }
 
 }
