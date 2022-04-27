@@ -8,9 +8,10 @@ POST http://localhost:4000/index
 Content-Type: application/json
 
 {
-    "id": "99",
+    "id": "40",
     "name": "brunoedu",
-    "ocupacion": "Tecnico"
+    "ocupacion": "Monitor",
+    "email": "brunoedu@gmail.com"
     
 }
 

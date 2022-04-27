@@ -15,6 +15,7 @@ employee.createEmployee = async (req, res, next) => {
     id: req.body.id,
     name: req.body.name,
     ocupacion: req.body.ocupacion,
+    email: req.body.email,
   });
   await employee.save();
   res.json({ status: "Employee created" });
