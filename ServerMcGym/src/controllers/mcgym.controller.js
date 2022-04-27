@@ -14,8 +14,8 @@ employee.createEmployee = async (req, res, next) => {
   const employee = new Employee({
     id: req.body.id,
     name: req.body.name,
-    ocupacion: req.body.ocupacion,
     email: req.body.email,
+    ocupacion: req.body.ocupacion
   });
   await employee.save();
   res.json({ status: "Employee created" });
