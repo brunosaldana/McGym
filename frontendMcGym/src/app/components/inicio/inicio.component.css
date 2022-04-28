@@ -1,13 +1,14 @@
-body,
+body {
+  /* background-image: url("./gym.jpg"); */
+}
 html {
   width: 100%;
   margin: 0;
   scroll-behavior: smooth;
 }
 
-.principal{
-    background: rgb(235, 61, 61);
-
+.principal {
+  background: rgb(235, 61, 61);
 }
 #backgroundContainer {
   width: 100%;
@@ -143,19 +144,16 @@ a {
 }
 
 #header {
-background-color:rgb(0 0 0 / 30%) ;
+  background-color: rgb(0 0 0 / 30%);
   display: flex;
   justify-content: end;
   border: none;
   box-shadow: 40 20px 20px rgb(0, 0, 0/100%);
-
 }
 
-.navbar-brand{
-    color: white;
+.navbar-brand {
+  color: white;
 }
 
-#map-mapbox{
-
+#map-mapbox {
 }
-        

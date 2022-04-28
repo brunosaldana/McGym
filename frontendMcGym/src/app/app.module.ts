@@ -26,7 +26,7 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
     FormsModule,
     
     RouterModule.forRoot([
-      {path: 'inicio', component:
+      {path: '', component:
       InicioComponent},
         {path: 'employee', component:
       EmployeeComponent},

@@ -1,12 +1,17 @@
-html body {
-  width: 100%;
+body {
   height: 100%;
+  background-color: aqua;
 }
 
 .root {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
   background-color: aqua;
+  background-size: cover;
 }
 .principal {
+  margin-top: 100%;
   width: 500px;
   margin: auto;
 }
@@ -20,4 +25,7 @@ html body {
 
 .input {
   font-size: 1.5rem;
+}
+nav {
+  width: 100%;
 }
