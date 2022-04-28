@@ -1,10 +1,10 @@
 ###
 
-GET http://localhost:4000/index HTTP/1.1
+GET http://localhost:4000 HTTP/1.1
 
 ###
 
-POST http://localhost:4000/index 
+POST http://localhost:4000
 Content-Type: application/json
 
 {
@@ -17,11 +17,11 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:4000/index/6266d4c7130f3c9c4aa85fa4 HTTP/1.1
+GET http://localhost:4000/ HTTP/1.1
 
 ###
 
-PUT http://localhost:4000/index/6266dcad358797860601f3dd 
+PUT http://localhost:4000/
 Content-Type: application/json
 
 {
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:4000/index/6266d84729d40a28f0037979
+DELETE http://localhost:4000/626834c4ccbaa744862d2234

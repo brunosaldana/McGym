@@ -7,14 +7,14 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   
-  URL_API = 'http://localhost:4000/index';
+  URL_API = 'http://localhost:4000';
 
   selectedEmployee: Employee = {
       id: '',
       name: '',
       email: '',
-      ocupacion: ''
-  
+      ocupacion: '',
+      _id: ''
     };
   
 
@@ -31,5 +31,10 @@ export class EmployeeService {
   createEmployee(employee: Employee){
     return this.http.post(this.URL_API,employee);
   }
+
+  deleteEmployee(_id: string){
+    return this.http.delete(`${this.URL_API}/${_id}`)
+  }
+
 
 }

@@ -23,10 +23,10 @@
                     </div>
                     <br>
                     
-                    <button class="btn btn-success">
+                    <button class="btn btn-primary">
                         Clean
                     </button>
-                    <button class="btn btn-primary">
+                    <button class="btn btn-light">
                         Añadir
                     </button>
                 </form>
@@ -58,11 +58,12 @@
                     <td>{{ employee.name }}</td>
                     <td>{{ employee.email }}</td>
                     <td>{{ employee.ocupacion }}</td>
+                    <td>{{ employee._id }}</td>
                     <td>
                         <button class="btn btn-warning btn-sm"> 
                             <i class="material-icons"> edit </i>  
                         </button>
-                        <button class="btn btn-danger btn-sm"> 
+                        <button class="btn btn-danger btn-sm" (click)="deleteEmployee(employee._id)"> 
                             <i class="material-icons"> delete </i>  
                         </button>
                     </td>

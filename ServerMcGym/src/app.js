@@ -14,6 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false}));
 
 // Routes
-app.use("/index", require("./routes/mcgym.routes"));
+app.use("/", require("./routes/mcgym.routes"));
 
 module.exports = app;

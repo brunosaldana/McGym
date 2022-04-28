@@ -5,5 +5,5 @@ export interface Employee {
     email: string
     createdAt?: string
     updatedAt?: string
-    _id?: string
+    _id: string
 }

@@ -9,9 +9,10 @@ const employeeSchema = new Schema(
     ocupacion : {type: String, required: true},
     email : {type: String, required: true},
 
+
   },
   {
-    versionKey: false,
+    versionKey: false,  
     timestamps: true,
   }
 );

@@ -36,10 +36,23 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.createEmployee(form.value).subscribe(
       res => {
         this.getEmployees();
+        form.reset();
       },
       err => console.log(err)
     )
-    
   }
+
+  deleteEmployee(id: string){
+    if(confirm('Seguro? ')){
+      this.employeeService.deleteEmployee(id).subscribe(
+      (res) => {
+        this.getEmployees();
+      },
+      (err) => console.error(err)
+      )
+    }
+  }
+
+
 
 }
