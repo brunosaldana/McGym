@@ -22,7 +22,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     FormsModule,
     
     RouterModule.forRoot([
-      {path: 'inicio', component:
+      {path: '', component:
       InicioComponent},
         {path: 'employee', component:
       EmployeeComponent}

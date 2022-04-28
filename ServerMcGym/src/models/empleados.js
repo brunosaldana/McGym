@@ -8,13 +8,13 @@ const employeeSchema = new Schema(
     name : {type: String, required: true},
     ocupacion : {type: String, required: true},
     email : {type: String, required: true},
-
+ 
 
   },
-  {
+  { 
     versionKey: false,  
-    timestamps: true,
+    timestamps: true,   
   }
 );
-
-module.exports = mongoose.model("Empleado", employeeSchema);
+    
+module.exports = mongoose.model("Empleado", employeeSchema);        

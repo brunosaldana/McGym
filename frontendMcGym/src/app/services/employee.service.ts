@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Employee } from '../models/employee';
+import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +31,8 @@ export class EmployeeService {
     
   }
   createEmployee(employee: Employee){
-    return this.http.post(this.URL_API,employee);
+      
+      return this.http.post(this.URL_API,employee);   
   }
 
   deleteEmployee(_id: string){
