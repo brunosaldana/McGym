@@ -1,0 +1,23 @@
+html body {
+  width: 100%;
+  height: 100%;
+}
+
+.root {
+  background-color: aqua;
+}
+.principal {
+  width: 500px;
+  margin: auto;
+}
+
+.forgot {
+  padding: 1.6rem;
+  border: 2px solid black;
+  background-color: rgb(93, 127, 230);
+  border-radius: 1.6rem;
+}
+
+.input {
+  font-size: 1.5rem;
+}
