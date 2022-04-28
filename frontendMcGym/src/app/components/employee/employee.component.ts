@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-employee',
@@ -14,7 +15,7 @@ export class EmployeeComponent implements OnInit {
     
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
     this.getEmployees();
    
   }
@@ -30,4 +31,15 @@ export class EmployeeComponent implements OnInit {
       err => console.log(err)
     )
   }
+
+  addEmployee(form: NgForm){
+    this.employeeService.createEmployee(form.value).subscribe(
+      res => {
+        this.getEmployees();
+      },
+      err => console.log(err)
+    )
+    
+  }
+
 }

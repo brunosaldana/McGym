@@ -8,7 +8,7 @@ POST http://localhost:4000/index
 Content-Type: application/json
 
 {
-    "id": "40",
+    "id": "256",
     "name": "brunoedu",
     "ocupacion": "Monitor",
     "email": "brunoedu@gmail.com"
@@ -29,4 +29,4 @@ Content-Type: application/json
 }
 
 ### 
-DELETE http://localhost:4000/index/6266d90042dff310fe4cfe2d
+DELETE http://localhost:4000/index/6266d84729d40a28f0037979

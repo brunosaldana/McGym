@@ -8,8 +8,34 @@
     <div class = "col-md-4">
         <div class = "card">
             <div class = "card-body">
-                <h1> Crear Empleado!</h1>
+                <h1> EMPLEADOS</h1>
 
+                <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)">
+                    <div class="form-group">
+                        <input [(ngModel)]="employeeService.selectedEmployee.id" name = "id" type="text" class="form-control" placeholder="ID">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="employeeService.selectedEmployee.name" name = "name" type="text" class="form-control" placeholder="Nombre">
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="employeeService.selectedEmployee.email" name = "email" type="text" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <select  [(ngModel)]="employeeService.selectedEmployee.ocupacion" name = "ocupacion" class="form-control" size="1" >
+                            <option value="" disabled selected>Ocupación</option>
+                            <option>Técnico</option>
+                            <option>Monitor</option>
+                        </select>
+                    </div>
+                    <br>
+                    
+                    <button class="btn btn-success">
+                        Clean
+                    </button>
+                    <button class="btn btn-primary">
+                        Añadir
+                    </button>
+                </form>
             </div>
         </div>
         
@@ -39,8 +65,12 @@
                     <td>{{ employee.email }}</td>
                     <td>{{ employee.ocupacion }}</td>
                     <td>
-                        <button class="btn btn-warning"> Editar </button>
-                        <button class="btn btn-danger"> Eliminar</button>
+                        <button class="btn btn-warning btn-sm"> 
+                            <i class="material-icons"> edit </i>  
+                        </button>
+                        <button class="btn btn-danger btn-sm"> 
+                            <i class="material-icons"> delete </i>  
+                        </button>
                     </td>
                 </tr>
                     

@@ -3,7 +3,7 @@ export interface Employee {
     name: string
     ocupacion: string
     email: string
-    createdAt: string
-    updatedAt: string
-    _id: string
+    createdAt?: string
+    updatedAt?: string
+    _id?: string
 }
