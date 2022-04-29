@@ -10,11 +10,11 @@ const employeeSchema = new Schema(
     email : {type: String, required: true},
  
 
-  },
+  }, 
   { 
-    versionKey: false,  
-    timestamps: true,   
-  }
-);
+    versionKey: false, 
+    timestamps: true,     
+  }  
+); 
     
-module.exports = mongoose.model("Empleado", employeeSchema);        
+module.exports = mongoose.model("Empleado", employeeSchema);    

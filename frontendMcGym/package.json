@@ -19,9 +19,11 @@
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
     "angular": "^1.8.3",
+    "angular-validation": "^1.4.5",
     "bootswatch": "^5.1.3",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.8.2",
+    "ngx-errors": "^0.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

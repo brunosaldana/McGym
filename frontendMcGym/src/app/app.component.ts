@@ -1,7 +1,11 @@
-import { AfterViewInit,Component, ViewChild } from '@angular/core';
+import { AfterViewInit, ViewChild } from '@angular/core';
 import { EmployeeComponent } from './components/employee/employee.component';
 import { LoginComponent } from './components/login/login.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directives';
+import { Component } from '@angular/core';
+
+import { FormBuilder, Validators, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',

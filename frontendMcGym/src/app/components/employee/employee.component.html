@@ -9,16 +9,25 @@
         <div class = "card">
             <div class = "card-body">
                 <h1> EMPLEADOS</h1>
-
-                <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)" form.valid>
+                <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)" (ngSubmit)="validation(employeeForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">                    
                     <div class="form-group" >
-                        <input [(ngModel)]="employeeService.selectedEmployee.id" name = "id" type="text" class="form-control" placeholder="ID" ngModel="id" required >
+                        <input required #id="ngModel" required [(ngModel)]="employeeService.selectedEmployee.id" name = "id" type="text" class="form-control" placeholder="ID" ngModel>
+                        <div *ngIf ="id.touched && id.invalid" class="alert alert-danger">
+                            ID is required
+                        </div>
                     </div>
                     <div class="form-group" >
-                        <input [(ngModel)]="employeeService.selectedEmployee.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                        <input required #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                        <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
+                            NAME is required
+                        </div>
                     </div>
                     <div class="form-group">
-                        <input [(ngModel)]="employeeService.selectedEmployee.email" name = "email" ngModel="email" type="email" class="form-control" placeholder="Email" ngModel required>
+                        <input required #email="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" name = "email" ngModel [email]="true" type="email" class="form-control" placeholder="Email" ngModel required>
+                        <div *ngIf ="email.touched && email.invalid" class="alert alert-danger">
+                            EMAIL is required
+                        </div>
                     </div>
                     <div class="form-group">
                         <select  [(ngModel)]="employeeService.selectedEmployee.ocupacion" name = "ocupacion" ngModel="ocupacion" class="form-control" size="1" ngModel required>
@@ -27,7 +36,7 @@
                             <option>Monitor</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-secondary" >Save</button>
+                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!employeeForm.valid ? true : null" >Save</button>
                 </form>
                 <button class="btn btn-primary mr-2" (click)="resetForm(employeeForm)">Clean</button>
             </div>
