@@ -19,8 +19,7 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
     EmployeeComponent,
     InicioComponent,
     Forgot1Component,
-    Forgot2Component
-  ],
+    Forgot2Component  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

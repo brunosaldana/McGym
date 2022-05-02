@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
-import { NgForm } from '@angular/forms';
+import { AbstractControl, NgForm } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 
 
@@ -12,10 +12,11 @@ import { Employee } from 'src/app/models/employee';
 })
 export class EmployeeComponent implements OnInit {
   
-  constructor(public employeeService: EmployeeService) {
-    
+  constructor(public employeeService: EmployeeService) {    
     
   }
+
+
   validation(_form: NgForm){
     console.log("valida")
 
