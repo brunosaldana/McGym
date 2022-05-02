@@ -1,6 +1,5 @@
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { EmployeeComponent } from './components/employee/employee.component';
-import { LoginComponent } from './components/login/login.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directives';
 import { Component } from '@angular/core';
 
