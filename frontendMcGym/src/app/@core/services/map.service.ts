@@ -12,7 +12,7 @@ export class MapService {
   // Coordenadas de la localización donde queremos centrar el mapa
   lat = 41.23112;
   lng = 1.72878;
-  zoom = 15;
+  zoom = 14;
   constructor() {
     // Asignamos el token desde las variables de entorno
     this.mapbox.accessToken = environment.mapBoxToken;

@@ -12,6 +12,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { Forgot1Component } from './components/forgot1/forgot1.component';
 import { Forgot2Component } from './components/forgot2/forgot2.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
     EmployeeComponent,
     InicioComponent,
     Forgot1Component,
-    Forgot2Component  ],
+    Forgot2Component,
+    MainComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -35,7 +38,9 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
       {path: 'forgot1', component:
       Forgot1Component},
       {path: 'forgot2', component:
-      Forgot2Component}
+      Forgot2Component},
+      {path: 'main', component:
+      MainComponent}
     ])
   ],
   providers: [],
