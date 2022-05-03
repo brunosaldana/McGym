@@ -8,21 +8,27 @@ employee.getEmployees = async (req, res, next) => {
 };
 
 
-
-
 employee.createEmployee = async (req, res, next) => {
-  const employee = new Employee({
-    name: req.body.name,
-    apellido: req.body.apellido,
-    telefono: req.body.telefono,
-    datanaixement: req.body.datanaixement,
-    dni: req.body.dni,
-    email: req.body.email,
-    password: req.body.password,
-    ocupacion: req.body.ocupacion
-  });
-  await employee.save();
-  res.json({ status: "Employee created" });
+  var result = await getEmployeemail(req)
+  if(result){
+    res.send(true)
+
+  } else {
+    res.send(false)
+    const employee = new Employee({
+      name: req.body.name,
+      apellido: req.body.apellido,
+      telefono: req.body.telefono,
+      datanaixement: req.body.datanaixement,
+      dni: req.body.dni,
+      email: req.body.email,
+      password: req.body.password,
+      ocupacion: req.body.ocupacion
+    });
+    await employee.save();
+    res.json({ status: "Employee created" });
+
+  }
 };
 
 
@@ -33,6 +39,15 @@ employee.getEmployee = async (req, res, next) => {
   };
 
 
+
+  const getEmployeemail = async (req, res) => {
+    const employee = await Employee.findOne( {email: req.body.email} );
+    if(employee){
+      return true
+    } else {
+      return false
+    }
+  };
 
 
   employee.editEmployee = async (req, res, next) => {
@@ -48,3 +63,4 @@ employee.deleteEmployee = async (req, res, next) => {
 };
 
 module.exports = employee;
+
