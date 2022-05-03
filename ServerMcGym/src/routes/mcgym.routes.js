@@ -13,4 +13,4 @@ router.put("/:id", employee.editEmployee);
 
 router.delete("/:id", employee.deleteEmployee);   
 
-module.exports = router;
+module.exports = router; 

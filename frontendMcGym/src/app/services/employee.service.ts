@@ -13,19 +13,26 @@ export class EmployeeService {
   URL_API = 'http://localhost:4000';
 
   selectedEmployee: Employee = {
-      id: '',
+      _id: '',
       name: '',
+      apellido: '',
+      telefono: '',
+      datanaixement: '',
       email: '',
-      ocupacion: '',
-      _id: ''
+      dni: '',
+      password: '',
+      ocupacion: ''
     };
   
 
   employees: Employee[] = [];
+  controls: any;
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
 
+  }
+  
 
   getEmployees(){
     return this.http.get<Employee[]>(this.URL_API);

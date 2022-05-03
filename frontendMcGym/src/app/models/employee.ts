@@ -1,9 +1,14 @@
 export interface Employee {
-    id: string
+    _id: string
     name: string
+    apellido: string
+    telefono: string
+    password: string
+    datanaixement: string
     ocupacion: string
     email: string
+    dni: string
     createdAt?: string
     updatedAt?: string
-    _id: string
+
 }

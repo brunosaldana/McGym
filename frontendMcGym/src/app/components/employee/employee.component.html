@@ -12,15 +12,33 @@
                 <form #employeeForm="ngForm" (ngSubmit)="addEmployee(employeeForm)" (ngSubmit)="validation(employeeForm)">
                     <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="employeeService.selectedEmployee._id">                    
                     <div class="form-group" >
-                        <input required #id="ngModel" required [(ngModel)]="employeeService.selectedEmployee.id" name = "id" type="text" class="form-control" placeholder="ID" ngModel>
-                        <div *ngIf ="id.touched && id.invalid" class="alert alert-danger">
-                            ID is required
-                        </div>
-                    </div>
-                    <div class="form-group" >
                         <input required #name="ngModel" [(ngModel)]="employeeService.selectedEmployee.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
                         <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
                             NAME is required
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #apellido="ngModel" [(ngModel)]="employeeService.selectedEmployee.apellido" name = "apellido" ngModel="apellido" type="text" class="form-control" placeholder="Apellido" ngModel required>
+                        <div *ngIf ="apellido.touched && apellido.invalid" class="alert alert-danger">
+                            APELLIDO is required
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #telefono="ngModel" [(ngModel)]="employeeService.selectedEmployee.telefono" name = "telefono" ngModel="telefono" type="text" class="form-control" placeholder="Telefono" ngModel required>
+                        <div *ngIf ="telefono.touched && telefono.invalid" class="alert alert-danger">
+                            TELEFONO is required
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #dni="ngModel" [(ngModel)]="employeeService.selectedEmployee.dni" name = "dni" ngModel="dni" type="text" class="form-control" placeholder="DNI" ngModel required>
+                        <div *ngIf ="dni.touched && dni.invalid" class="alert alert-danger">
+                            DNI is required
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #datanaixement="ngModel" [(ngModel)]="employeeService.selectedEmployee.datanaixement" name = "datanaixement" ngModel="datanaixement" type="date" class="form-control" placeholder="Fecha de nacimiento" ngModel required>
+                        <div *ngIf ="datanaixement.touched && datanaixement.invalid" class="alert alert-danger">
+                            FECHA NACIMIENTO is required
                         </div>
                     </div>
                     <div class="form-group">
@@ -28,6 +46,14 @@
                         <div *ngIf ="email.touched && email.invalid" class="alert alert-danger">
                             EMAIL is required
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <input required #password="ngModel"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="employeeService.selectedEmployee.password" name = "password" ngModel type="password" class="form-control" placeholder="Password" ngModel required>
+                        <div *ngIf ="password.touched && password.invalid" class="btn btn-info">
+                            Mínimo 8 carácteres, 1 mayúscula y 1 número
+                        </div>
+                    </div>
+                    <div class="form-group">
                     </div>
                     <div class="form-group">
                         <select  [(ngModel)]="employeeService.selectedEmployee.ocupacion" name = "ocupacion" ngModel="ocupacion" class="form-control" size="1" ngModel required>
@@ -48,10 +74,19 @@
             <thead>
                 <tr>
                     <th>
-                        ID
+                        Nombre
                     </th>
                     <th>
-                        Nombre
+                        Apellido
+                    </th>
+                    <th>
+                        Telefono
+                    </th>
+                    <th>
+                        DNI
+                    </th>
+                    <th>
+                        Fecha de nacimiento
                     </th>
                     <th>
                         Email
@@ -63,8 +98,11 @@
             </thead>
             <tbody>
                 <tr *ngFor="let employee of employeeService.employees">
-                    <td>{{ employee.id }}</td>
                     <td>{{ employee.name }}</td>
+                    <td>{{ employee.apellido}}</td>
+                    <td>{{ employee.telefono}}</td>
+                    <td>{{ employee.dni}}</td>
+                    <td>{{ employee.datanaixement }}</td>
                     <td>{{ employee.email }}</td>
                     <td>{{ employee.ocupacion }}</td>
                     <td>

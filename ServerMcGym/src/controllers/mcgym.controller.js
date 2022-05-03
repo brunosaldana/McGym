@@ -12,17 +12,18 @@ employee.getEmployees = async (req, res, next) => {
 
 employee.createEmployee = async (req, res, next) => {
   const employee = new Employee({
-    id: req.body.id,
     name: req.body.name,
+    apellido: req.body.apellido,
+    telefono: req.body.telefono,
+    datanaixement: req.body.datanaixement,
+    dni: req.body.dni,
     email: req.body.email,
+    password: req.body.password,
     ocupacion: req.body.ocupacion
   });
   await employee.save();
   res.json({ status: "Employee created" });
 };
-
-
-
 
 
 employee.getEmployee = async (req, res, next) => {
