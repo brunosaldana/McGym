@@ -1,22 +1,40 @@
-.flex-container {
+body {
+  background-color: rgb(255, 255, 255);
+}
+header {
+  height: 5vw;
+  margin-bottom: 5vw;
 }
 
-.principal{
-    width: 500px;
-    margin: auto;
+.principal {
+  background-color: rgb(238, 247, 206);
+  border: 1px solid black;
 }
 
-
-.forgot {
-  padding: 1.6rem;
-  border: 2px solid black;
-  background-color: rgb(93, 127, 230);
-  border-radius: 1.6rem;
+.final {
+  margin-top: 2%;
+  background-color: rgba(169, 166, 172, 0.267);
 }
 
-.input {
-  font-size: 1.5rem;
+button {
+  margin-top: 10px;
 }
 
-form {
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1vw;
+  font-size: 4vw;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .icons {
+    font-size: 7vw;
+  }
 }

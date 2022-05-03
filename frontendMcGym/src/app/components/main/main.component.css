@@ -1,5 +1,6 @@
 body {
-  background-color: rgb(197, 145, 76);
+  background-color: rgb(218, 89, 89);
+
 }
 
 h2 {
@@ -46,6 +47,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.horario{
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+
 }
 @media only screen and (max-width: 600px) {
   #logo {

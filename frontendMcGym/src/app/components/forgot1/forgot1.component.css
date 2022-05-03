@@ -1,30 +1,32 @@
 body {
   background-color: rgb(255, 255, 255);
 }
-header {
-  height: 5vw;
-  margin-bottom: 5vw;
+
+.navbar {
+  margin-bottom: 3vw;
 }
 
 .principal {
   background-color: rgb(238, 247, 206);
   border: 1px solid black;
+  padding: 3vw;
 }
 
 .final {
-  margin-top: 2%;
+  margin-top: 2vw;
   background-color: rgba(169, 166, 172, 0.267);
 }
 
 button {
-  margin-top: 10px;
+  margin-top: 1vw;
 }
 
 .icons {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2%;
+  margin: 1vw;
+  font-size: 4vw;
 }
 
 .footer {
@@ -33,7 +35,7 @@ button {
 }
 
 @media only screen and (max-width: 600px) {
-  .principal{
-    margin-top:13vh;
+  .icons {
+    font-size: 7vw;
   }
 }

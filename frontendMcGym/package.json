@@ -18,6 +18,7 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+    "@ng-bootstrap/ng-bootstrap": "latest",
     "angular": "^1.8.3",
     "angular-validation": "^1.4.5",
     "bootswatch": "^5.1.3",
