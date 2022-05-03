@@ -3,6 +3,7 @@ body {
 }
 
 h2 {
+  width: 100%;
   color: white;
 }
 a {
@@ -34,6 +35,9 @@ a {
   justify-content: end;
   gap: 2%;
 }
+.fa-solid {
+  font-size: 2vw;
+}
 
 .title {
   width: 100%;
@@ -42,4 +46,27 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 600px) {
+  #logo {
+    width: 100%;
+  }
+
+  .title {
+    margin-left: 1%;
+  }
+  .links {
+    font-size: 6vw;
+    margin: 2%;
+    width: 100%;
+    height: 100%;
+    gap: 2%;
+  }
+  .fa-solid {
+    font-size: 7vw;
+  }
+  .horario {
+    width: 100%;
+    height: 100%;
+  }
 }
