@@ -19,6 +19,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { Forgot1Component } from './components/forgot1/forgot1.component';
 import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
+import { ClienteComponent } from './cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MainComponent } from './components/main/main.component';
     InicioComponent,
     Forgot1Component,
     Forgot2Component,
-    MainComponent
+    MainComponent,
+    ClienteComponent
   ],
   imports: [
     BrowserModule,

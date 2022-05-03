@@ -4,7 +4,7 @@ const uri = "mongodb+srv://brunosaldana:tarda1234@mcgym.1ppc0.mongodb.net/Mcgym?
 
 mongoose
     .connect(uri, {
-
+ 
         useNewUrlParser: true, 
         
         useUnifiedTopology: true 

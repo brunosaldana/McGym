@@ -1,21 +1,24 @@
 ###
 
-GET http://localhost:4000 HTTP/1.1
+GET http://localhost:4000/Empleados
 
 ###
 
-POST http://localhost:4000
+POST http://localhost:4000/Empleados
 Content-Type: application/json
 
 {
     "name": "brunoedu",
-    "apellido": "habibi",
-    "ocupacion": "Monitor",
-    "datanaixement": "",
-    "telefono": "",
-    "email": "brunoedu@gmail.com"
+    "apellido": "postsiiiiiifunviona",
+    "telefono": "465465446",
+    "datanaixement": "22101999",
+    "ocupacion": "Tecnico",
+    "dni": "4543242",
+    "email": "brunoedu22@gmail.com",
+    "password": "Mati1234"
     
 }
+
 
 ###
 

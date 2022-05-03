@@ -10,7 +10,7 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   
-  URL_API = 'http://localhost:4000';
+  URL_API = 'http://localhost:4000/Empleados';
 
   selectedEmployee: Employee = {
       _id: '',
