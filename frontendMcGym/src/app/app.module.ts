@@ -19,7 +19,8 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { Forgot1Component } from './components/forgot1/forgot1.component';
 import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
-import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { ReservaComponent } from './components/reserva/reserva.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClienteComponent } from './cliente/cliente.component';
     Forgot1Component,
     Forgot2Component,
     MainComponent,
-    ClienteComponent
+    ClienteComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,9 @@ import { ClienteComponent } from './cliente/cliente.component';
       {path: 'forgot2', component:
       Forgot2Component},
       {path: 'main', component:
-      MainComponent}
+      MainComponent},
+      {path: 'reserva', component:
+      ReservaComponent}
     ])
   ],
   providers: [],
