@@ -42,25 +42,48 @@
             </div>
         </div>
         <h2>Avtividades Disponibles</h2>
-        <div>
-            <div class="row">
-                <div class="col-3 bar"> 
-                    <h1>a</h1>
-                </div>
+    <div class = "col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellidos
+                    </th>
+                    <th>
+                        Telefono
+                    </th>
+                    <th>
+                        DNI
+                    </th>
+                    <th>
+                        Fecha de nacimiento
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Ocupacion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let employee of employeeService.employees">
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.apellido}}</td>
+                    <td>{{ employee.telefono}}</td>
+                    <td>{{ employee.dni}}</td>
+                    <td>{{ employee.datanaixement }}</td>
+                    <td>{{ employee.email }}</td>
+                    <td>{{ employee.ocupacion }}</td>
 
-                <div class="col-3 bar">
-                    <h1>a</h1>
-                </div>
-
-                <div class="col-3 bar">
-                    <h1>a</h1>
-                </div>
-
-                <div class="col-3 bar">
-                    <h1>a</h1>
-                </div>
-            </div>
-        </div>
+                </tr>
+                    
+            </tbody>
+        </table>
+</div>
 
 
 

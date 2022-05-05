@@ -26,6 +26,7 @@
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.8.2",
     "ng": "^0.0.0",
+    "ngx-cookie-service": "^13.2.0",
     "ngx-errors": "^0.0.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -4,6 +4,7 @@ import { MapService } from '../../../app/@core/services/map.service';
 import { AbstractControl, NgForm } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
 
 
 
@@ -22,11 +23,21 @@ export class InicioComponent implements OnInit {
     password: ''
   }
 
-  constructor(private map: MapService, private LoginService:LoginService, public router : Router) {    
-    
+  public cookieValue: string | undefined;
+
+  constructor(private cookieService: CookieService,private map: MapService,
+     private LoginService:LoginService, public router : Router) { 
+      
+
+      
+
+
   }
 
-
+  cookie(){
+    this.cookieService.set('sesion-token', 'aaa');
+    this.cookieValue = this.cookieService.get('sesion-token')
+  }
 
   ngOnInit() {
     this.map.buildMap();
@@ -35,6 +46,7 @@ export class InicioComponent implements OnInit {
   login(_form: NgForm){
     this.LoginService.login(_form.value).subscribe(
       res => {console.log(res)
+        this.cookie()
         this.router.navigate(["/main"])
         
       },
