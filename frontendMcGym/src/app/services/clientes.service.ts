@@ -32,7 +32,7 @@ export class ClienteService {
   
 
   getClientes(){
-    return this.http.get<Clientes[]>(this.URL_API);
+    return this.http.get<Cliente[]>(this.URL_API);
     
   }
   createCliente(cliente: Cliente){
@@ -45,7 +45,7 @@ export class ClienteService {
   
   }
 
-  deleteClient(_id: string){
+  deleteCliente(_id: string){
     return this.http.delete(`${this.URL_API}/${_id}`)
   }
 

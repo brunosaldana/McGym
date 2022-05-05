@@ -4,23 +4,22 @@ const employee = {};
 
 employee.getEmployees = async (req, res, next) => {
   const employees = await Employee.find();
-  res.json(employees);
+  res.json(employees); 
 };
-
-
+  
+ 
 employee.createEmployee = async (req, res, next) => {
   var result = await getEmployeemail(req)
   if(result){
-    res.send(true)
-
+    res.send(true) 
+ 
   } else {
-    res.send(false)
     const employee = new Employee({
-      name: req.body.name,
-      apellido: req.body.apellido,
+      name: req.body.name, 
+      apellido: req.body.apellido, 
       telefono: req.body.telefono,
-      datanaixement: req.body.datanaixement,
       dni: req.body.dni,
+      datanaixement: req.body.datanaixement, 
       email: req.body.email,
       password: req.body.password,
       ocupacion: req.body.ocupacion
@@ -29,7 +28,7 @@ employee.createEmployee = async (req, res, next) => {
     res.json({ status: "Employee created" });
 
   }
-};
+}; 
 
 
 employee.getEmployee = async (req, res, next) => {

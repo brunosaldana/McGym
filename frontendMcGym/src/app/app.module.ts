@@ -47,8 +47,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule.forRoot([
       {path: '', component:
       InicioComponent},
-        {path: 'employee', component:
+        {path: 'empleados', component:
       EmployeeComponent},
+      {path: 'clientes', component:
+      ClienteComponent},
       {path: 'forgot1', component:
       Forgot1Component},
       {path: 'forgot2', component:

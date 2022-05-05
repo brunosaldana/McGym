@@ -3,15 +3,15 @@ const router = express.Router();
 
 const employee = require("../controllers/mcgym.controller");
 
-router.get("/Empleados", employee.getEmployees); 
+router.get("/empleados", employee.getEmployees); 
 
-router.post("/Empleados/", employee.createEmployee);
+router.post("/empleados/", employee.createEmployee);
 
-router.get("/Empleados/:id", employee.getEmployee);
+router.get("/empleados/:id", employee.getEmployee);
 
-router.put("/Empleados/:id", employee.editEmployee);
+router.put("/empleados/:id", employee.editEmployee);
 
-router.delete("/Empleados/:id", employee.deleteEmployee);   
+router.delete("/empleados/:id", employee.deleteEmployee);   
 
 
 module.exports = router; 
