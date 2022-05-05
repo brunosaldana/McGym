@@ -1,9 +1,9 @@
 import { AfterViewInit, ViewChild } from '@angular/core';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directives';
 import { Component } from '@angular/core';
 
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -23,6 +23,12 @@ export class AppComponent implements AfterViewInit{
       const viewContainerRef = this.dynamic.viewContainerRef;
 
       const componentRef = viewContainerRef.createComponent<any>(EmployeeComponent);
+    }
+    generateComponent2(): void{
+
+      const viewContainerRef = this.dynamic.viewContainerRef;
+
+      const componentRef = viewContainerRef.createComponent<any>(ClienteComponent);
     }
 
 }

@@ -19,7 +19,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { Forgot1Component } from './components/forgot1/forgot1.component';
 import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
-import { ClienteComponent } from './cliente/cliente.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
 
 @NgModule({
   declarations: [
@@ -43,14 +43,16 @@ import { ClienteComponent } from './cliente/cliente.component';
     RouterModule.forRoot([
       {path: '', component:
       InicioComponent},
-        {path: 'employee', component:
+        {path: 'empleados', component:
       EmployeeComponent},
       {path: 'forgot1', component:
       Forgot1Component},
       {path: 'forgot2', component:
       Forgot2Component},
       {path: 'main', component:
-      MainComponent}
+      MainComponent},
+      {path: 'clientes', component:
+      ClienteComponent}
     ])
   ],
   providers: [],

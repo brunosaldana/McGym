@@ -1,1 +1,116 @@
-<p>cliente works!</p>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/clientes">CLIENTES</a>
+      <div class="busquedacliente">
+        Búsqueda de cliente por email: 
+        <input type="text" placeholder="Buscar cliente">
+      </div>
+    </div>
+  </nav>
+<div class = "row">
+    <div class = "col-md-4">
+        <div class = "card">
+            <div class = "card-body">
+                <h1> CLIENTES</h1>
+
+                <form #clienteForm = "ngForm" (ngSubmit)="addCliente(clienteForm)" (ngSubmit)="validation(clienteForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="clienteService.selectedCliente._id">                    
+                    <div class="form-group" >
+                        <input required #name = "ngModel" [(ngModel)]="clienteService.selectedCliente.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                        <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
+                            NOMBRE requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #apellido="ngModel" [(ngModel)]="clienteService.selectedCliente.apellido" name = "apellido" ngModel="apellido" type="text" class="form-control" placeholder="Apellido" ngModel required>
+                        <div *ngIf ="apellido.touched && apellido.invalid" class="alert alert-danger">
+                            APELLIDOS requeridos
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #telefono="ngModel" [(ngModel)]="clienteService.selectedCliente.telefono" name = "telefono" ngModel="telefono" type="text" class="form-control" placeholder="Telefono" ngModel required>
+                        <div *ngIf ="telefono.touched && telefono.invalid" class="alert alert-danger">
+                            TELEFONO requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input pattern="[0-9]{8}[A-Za-z]{1}" required #dni="ngModel" [(ngModel)]="clienteService.selectedCliente.dni" name = "dni" ngModel="dni" type="text" class="form-control" placeholder="DNI" ngModel required>
+                        <div *ngIf ="dni.touched && dni.invalid" class="alert alert-danger">
+                            DNI requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #datanaixement="ngModel" [(ngModel)]="clienteService.selectedCliente.datanaixement" name = "datanaixement" ngModel="datanaixement" type="date" class="form-control" placeholder="Fecha de nacimiento" ngModel required>
+                        <div *ngIf ="datanaixement.touched && datanaixement.invalid" class="alert alert-danger">
+                            FECHA NACIMIENTO requerida
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input required #email = "ngModel" [(ngModel)]="clienteService.selectedCliente.email" name = "email" ngModel [email]="true" type="email" class="form-control" placeholder="Email" ngModel required>
+                        <div *ngIf ="email.touched && email.invalid" class="alert alert-danger">
+                            EMAIL requerido
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input required #password="ngModel"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" [(ngModel)]="clienteService.selectedCliente.password" name = "password" ngModel type="password" class="form-control" placeholder="Password" ngModel required>
+                        <div *ngIf ="password.touched && password.invalid" class="btn btn-info">
+                            Mínimo 8 carácteres, 1 mayúscula y 1 número
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!clienteForm.valid ? true : null" >Save</button>
+                </form>
+                <button class="btn btn-primary mr-2" (click)="resetForm(clienteForm)">Clean</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class = "col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr> 
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Apellido
+                    </th>
+                    <th>
+                        Telefono
+                    </th>
+                    <th>
+                        DNI
+                    </th>
+                    <th>
+                        Fecha de nacimiento
+                    </th>
+                    <th class="docSection">
+                        Email
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let cliente of clienteService.clientes">
+                    <td>{{ cliente.name }}</td>
+                    <td>{{ cliente.apellido}}</td>
+                    <td>{{ cliente.telefono}}</td>
+                    <td>{{ cliente.dni}}</td>
+                    <td>{{ cliente.datanaixement }}</td>
+                    <td>{{ cliente.email }}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" (click)="editCliente(cliente)"> 
+                            <i class="material-icons"> edit </i>  
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteCliente(cliente._id)"> 
+                            <i class="material-icons"> delete </i>  
+                        </button>
+                    </td>
+                </tr>
+                    
+            </tbody>
+        </table>
+
+
+</div>
+<a class="btn btn-dark" type="button" href="/">INICIO<button class="control backlink"></button></a>
