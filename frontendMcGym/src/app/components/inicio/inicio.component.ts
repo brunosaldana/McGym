@@ -3,6 +3,7 @@ import { environment } from 'src/environments/environment.prod';
 import { MapService } from '../../../app/@core/services/map.service';
 import { AbstractControl, NgForm } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
+import { Router } from '@angular/router';
 
 
 
@@ -21,22 +22,24 @@ export class InicioComponent implements OnInit {
     password: ''
   }
 
-  constructor(private map: MapService, private LoginService:LoginService) {    
+  constructor(private map: MapService, private LoginService:LoginService, public router : Router) {    
     
   }
+
 
 
   ngOnInit() {
     this.map.buildMap();
   }
 
-  validation(_form: NgForm){
-    console.log("valida")
-
-  }
   login(_form: NgForm){
-    console.log("valida")
-
+    this.LoginService.login(_form.value).subscribe(
+      res => {console.log(res)
+        this.router.navigate(["/main"])
+        
+      },
+      err => console.log(err)
+    )
   }
 
 }

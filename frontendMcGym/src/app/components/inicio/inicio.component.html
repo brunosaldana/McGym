@@ -24,7 +24,7 @@
                   </div>
                   <div class="form">
 
-                      <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)" (ngSubmit)="validation(loginForm)"> 
+                      <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)"> 
                           <div class="login">
                               <label class="usu text-white" >Usuario</label>
                               <input required #email="ngModel" [(ngModel)]="user.email" name = "email" ngModel [email]="true" type="email" placeholder="Email" ngModel required>
