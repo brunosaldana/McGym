@@ -24,12 +24,13 @@
                   </div>
                   <div class="form">
 
-                      <form action=""> 
+                      <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)" (ngSubmit)="validation(loginForm)"> 
                           <div class="login">
                               <label class="usu text-white" >Usuario</label>
-                              <input type="text">
+                              <input required #email="ngModel" [(ngModel)]="user.email" name = "email" ngModel [email]="true" type="email" placeholder="Email" ngModel required>
                               <label class="text-white">Contraseña</label>
-                              <input type="password">
+                              <input required #password="ngModel" [(ngModel)]="user.password" name = "password" ngModel [email]="true" type="password" placeholder="password" ngModel required>
+
                           </div>
                           <div class="entrar">
                               <a class="forgot1" href="/forgot1">He olvidado la contraseña</a>

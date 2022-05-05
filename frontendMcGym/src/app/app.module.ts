@@ -21,6 +21,7 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ReservaComponent } from './components/reserva/reserva.component';
     Forgot2Component,
     MainComponent,
     ClienteComponent,
-    ReservaComponent
+    ReservaComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,9 @@ import { ReservaComponent } from './components/reserva/reserva.component';
       {path: 'main', component:
       MainComponent},
       {path: 'reserva', component:
-      ReservaComponent}
+      ReservaComponent},
+      {path: '**', component:
+       PageNotFoundComponent}
     ])
   ],
   providers: [],
