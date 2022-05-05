@@ -20,6 +20,10 @@ import { Forgot1Component } from './components/forgot1/forgot1.component';
 import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
+<<<<<<< HEAD
+=======
+import { ReservaComponent } from './components/reserva/reserva.component';
+>>>>>>> e6b5e07cb68a9db58fe77272af6b16bdf5b6e13c
 
 @NgModule({
   declarations: [
@@ -29,7 +33,8 @@ import { ClienteComponent } from './components/cliente/cliente.component';
     Forgot1Component,
     Forgot2Component,
     MainComponent,
-    ClienteComponent
+    ClienteComponent,
+    ReservaComponent
   ],
   imports: [
     BrowserModule,
@@ -51,8 +56,13 @@ import { ClienteComponent } from './components/cliente/cliente.component';
       Forgot2Component},
       {path: 'main', component:
       MainComponent},
+<<<<<<< HEAD
       {path: 'clientes', component:
       ClienteComponent}
+=======
+      {path: 'reserva', component:
+      ReservaComponent}
+>>>>>>> e6b5e07cb68a9db58fe77272af6b16bdf5b6e13c
     ])
   ],
   providers: [],

@@ -18,7 +18,12 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
+<<<<<<< HEAD
     "@ng-bootstrap/ng-bootstrap": "^12.1.1",
+=======
+    "@ng-bootstrap/ng-bootstrap": "latest",
+    "@ng-idle/core": "^11.1.0",
+>>>>>>> e6b5e07cb68a9db58fe77272af6b16bdf5b6e13c
     "angular": "^1.8.3",
     "angular-validation": "^1.4.5",
     "bootstrap": "^5.1.3",
