@@ -47,19 +47,16 @@ import { ReservaComponent } from './components/reserva/reserva.component';
       InicioComponent},
         {path: 'empleados', component:
       EmployeeComponent},
+      {path: 'clientes', component:
+      ClienteComponent},
       {path: 'forgot1', component:
       Forgot1Component},
       {path: 'forgot2', component:
       Forgot2Component},
       {path: 'main', component:
       MainComponent},
-<<<<<<< HEAD
-      {path: 'clientes', component:
-      ClienteComponent}
-=======
       {path: 'reserva', component:
       ReservaComponent}
->>>>>>> e6b5e07cb68a9db58fe77272af6b16bdf5b6e13c
     ])
   ],
   providers: [],
