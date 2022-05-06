@@ -9,7 +9,7 @@ Content-Type: application/json
 
 {
     "namemon": "aguareturbbiaaa",
-    "nametec": "edu",
+    "nametec": "edsaasdu",
     "fecha": "521233",
     "hora": "12:20",
     "incidencia": "no funciona mi vida esto es una basura"

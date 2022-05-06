@@ -10,11 +10,6 @@ import { ClienteService } from 'src/app/services/clientes.service';
 
 
 
-
-
-
-
-
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
@@ -29,6 +24,7 @@ export class InicioComponent implements OnInit {
 
   public cookieValue: string | undefined;
   Cliente: any;
+  cook: any;
 
   constructor(private cookieService: CookieService,public ClienteService:ClienteService, private map: MapService,private LoginService:LoginService, public router : Router) { 
       
@@ -54,8 +50,16 @@ export class InicioComponent implements OnInit {
         var u = JSON.stringify(res);
         var e = JSON.parse(u);
         console.log(e)
-        this.cookie(e._id);
-        this.router.navigate(["/main"])
+        const cook = this.cookie(e._id);
+        if (this.cookieService.get('sesion-token')){
+          this.router.navigate(["/main"])
+
+        } else { 
+          this.router.navigate(["/"])
+
+        }
+
+        
 
       },
       err => console.log(err)
@@ -63,7 +67,7 @@ export class InicioComponent implements OnInit {
   }
 
 
-    // if (this.cookieService.get('sesion-token'))
+    // 
     
 
   

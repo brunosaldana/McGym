@@ -41,25 +41,26 @@
                 </div>
             </div>
         </div>
+        <div class="fondo">
         <h2 class="text-center">Avtividades Disponibles</h2>
     <div class = "col-md-19">
         <table class="col-10">
             <thead>
                 <tr> 
                     <th>
-                        <h3>Nombre de la Actividad</h3>
+                        <h3 class="color">Nombre de la Actividad</h3>
                     </th>
                     <th>
-                        <h3>Monitor</h3>
+                        <h3 class="color">Monitor</h3>
                     </th>
                     <th>
-                        <h3>Dia</h3>
+                        <h3 class="color">Dia</h3>
                     </th>
                     <th>
-                        <h3>Hora</h3>
+                        <h3 class="color">Hora</h3>
                     </th>
                     <th>
-                        <h3>Duracion</h3>
+                        <h3 class="color">Duracion</h3>
                     </th>
                 </tr>
             </thead>
@@ -71,16 +72,14 @@
                     <td><p>{{ actividad.dia}}</p></td>
                     <td><p>{{ actividad.hora}}</p></td>
                     <td><p>{{ actividad.duracion }}</p></td>
+                    <td type="button" class="btn btn-primary btn-sm"> Reservar </td>
                 </tr>
             </tbody>
         </table>
-</div>
-
-
-
-
-
     </div>
+    </div>
+</div>
 </body>
+
 </html>
 
