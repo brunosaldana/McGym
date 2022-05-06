@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 
 
 
+
+
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
@@ -30,5 +32,11 @@ export class MainComponent implements OnInit {
 
     }
   }
+
+  salir(){
+    this.cookieService.delete('sesion-token')
+  }
+
+
 
 }

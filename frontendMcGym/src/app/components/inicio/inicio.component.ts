@@ -55,7 +55,7 @@ export class InicioComponent implements OnInit {
           this.router.navigate(["/main"])
 
         } else { 
-          this.router.navigate(["/"])
+          this.router.navigate([""])
 
         }
 
@@ -66,11 +66,5 @@ export class InicioComponent implements OnInit {
     )
   }
 
-
-    // 
-    
-
-  
-  
 
 }
