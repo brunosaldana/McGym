@@ -1,21 +1,18 @@
 ###
 
-GET http://localhost:4000/empleados
+GET http://localhost:4000/tareas
 
 ###
 
-POST http://localhost:4000/clientes HTTP/1.1
+POST http://localhost:4000/tareas HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "aguasucia",
-    "apellido": "postsiiiiiifunviona",
-    "telefono": 465465446,
-    "datanaixement": "22101999",
-    "ocupacion": "Tecnico",
-    "dni": "4543242d",
-    "email": "brunoedudzv223@gmail.com",
-    "password": "Mati1234",
+    "namemon": "aguareturbbiaaa",
+    "nametec": "edu",
+    "fecha": "521233",
+    "hora": "12:20",
+    "incidencia": "no funciona mi vida esto es una basura"
 }
 
 
@@ -32,5 +29,5 @@ Content-Type: application/json
     "name": "brunoeduupdated"
 }
 
-### 
+###
 DELETE http://localhost:4000/626834c4ccbaa744862d2234
