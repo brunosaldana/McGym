@@ -17,6 +17,7 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { TareasComponent } from './components/tareas/tareas.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       PageNotFoundComponent},
     ])
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
