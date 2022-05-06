@@ -1,0 +1,109 @@
+
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/actividades">ACTIVIDADES</a>
+    </div>
+  </nav>
+<div class = "row">
+    <div class = "col-md-4">
+        <div class = "card">
+            <div class = "card-body">
+                <h1> ACTIVIDADES</h1>
+
+                <form #actividadForm = "ngForm" (ngSubmit)="addActividad(actividadForm)" (ngSubmit)="validation(actividadForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="actividadesService.selectedActividad._id">                    
+                    <div class="form-group" >
+                        <select required #name = "ngModel" [(ngModel)]="actividadesService.selectedActividad.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                            <option value="" disabled selected>Actividad</option>
+                            <option>AQUAGYM</option>
+                            <option>FITBALL</option>
+                            <option>YOGA</option>
+                            <option>STEP</option>
+                            <option>BODYPUM</option>
+                            <option>CIRCUITO</option>
+                            <option>NATACION</option>
+                            <option>SPINNING</option>
+                            <option>ZUMBA</option>
+                        </select>
+                        <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
+                            NOMBRE requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #apellido="ngModel" [(ngModel)]="actividadesService.selectedActividad.impartemon" name = "impartemon" ngModel="impartemon" type="text" class="form-control" placeholder="Monitor" ngModel required>
+                        <div *ngIf ="apellido.touched && apellido.invalid" class="alert alert-danger">
+                            Monitor requeridos
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #telefono="ngModel" [(ngModel)]="actividadesService.selectedActividad.dia" name = "dia" ngModel="dia" type="date" class="form-control" placeholder="Dia" ngModel required>
+                        <div *ngIf ="telefono.touched && telefono.invalid" class="alert alert-danger">
+                            Dia requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #dni="ngModel" [(ngModel)]="actividadesService.selectedActividad.hora" name = "hora" ngModel="hora" type="time" class="form-control" placeholder="Hora" ngModel required>
+                        <div *ngIf ="dni.touched && dni.invalid" class="alert alert-danger">
+                            Hora requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #datanaixement="ngModel" [(ngModel)]="actividadesService.selectedActividad.duracion" name = "duracion" ngModel="duracion" type="time" class="form-control" placeholder="Duracion" ngModel required>
+                        <div *ngIf ="datanaixement.touched && datanaixement.invalid" class="alert alert-danger">
+                            Duracion requerida
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!actividadForm.valid ? true : null" >Save</button>
+                </form>
+                <button class="btn btn-primary mr-2" (click)="resetForm(actividadForm)">Clean</button>
+            </div>
+        </div>
+        
+    </div>
+    <div class = "col-md-8">
+        <table class="table table-striped">
+            <thead>
+                <tr> 
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Monitor
+                    </th>
+                    <th>
+                        Dia
+                    </th>
+                    <th>
+                        Hora
+                    </th>
+                    <th>
+                        Duracion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let actividad of actividadesService.actividades">
+                    <td>{{ actividad.name }}</td>
+                    <td>{{ actividad.impartemon}}</td>
+                    <td>{{ actividad.dia}}</td>
+                    <td>{{ actividad.hora}}</td>
+                    <td>{{ actividad.duracion }}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" (click)="editActividad(actividad)"> 
+                            <i class="material-icons"> edit </i>  
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteActividad(actividad._id)"> 
+                            <i class="material-icons"> delete </i>  
+                        </button>
+                    </td>
+                </tr>
+                    
+            </tbody>
+        </table>
+
+
+</div>
+<a class="btn btn-dark" type="button" href="/">INICIO<button class="control backlink"></button></a>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmployeeService } from 'src/app/services/employee.service';
+import { ActividadesService } from 'src/app/services/actividades.service';
 import { Employee } from 'src/app/models/employee';
 
 
@@ -11,24 +11,24 @@ import { Employee } from 'src/app/models/employee';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(public employeeService: EmployeeService) {    
+  constructor(public ActividadService: ActividadesService) {    
     
   }
 
   ngOnInit(): void { 
     this.getEmployees();
   }
-
-
-
+  
   getEmployees(){
-     this.employeeService.getEmployees().subscribe(
+     this.ActividadService.getActividades().subscribe(
       res => {
-        this.employeeService.employees = res;
+        this.ActividadService.actividades = res;
 
       },
       err => console.log(err)
     )
   }
+
+
 
 }

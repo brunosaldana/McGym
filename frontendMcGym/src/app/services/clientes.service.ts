@@ -7,6 +7,7 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
+  [x: string]: any;
   
   URL_API = 'http://localhost:4000/Clientes';
 

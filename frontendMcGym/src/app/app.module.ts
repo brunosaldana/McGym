@@ -23,6 +23,8 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CookieService } from 'ngx-cookie-service';
+import { misActividadesComponent } from './misActividades/misActividades.component';
+import { ActividadesComponent } from './components/actividades/actividades.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { CookieService } from 'ngx-cookie-service';
     MainComponent,
     ClienteComponent,
     ReservaComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    misActividadesComponent,
+    ActividadesComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,10 @@ import { CookieService } from 'ngx-cookie-service';
       MainComponent},
       {path: 'reserva', component:
       ReservaComponent},
+      {path: 'misActividades', component:
+      misActividadesComponent},
+      {path: 'actividades', component:
+      ActividadesComponent},
       {path: '**', component:
        PageNotFoundComponent}
     ])

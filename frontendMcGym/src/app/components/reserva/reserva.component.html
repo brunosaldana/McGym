@@ -34,53 +34,44 @@
                     <a class="btn btn-primary" href="/reserva" role="button">Reservar Actividades</a>
                 </div>
                 <div class="col-3 bar">
-                    <a class="btn btn-primary" href="#" role="button">Mis Actividades</a>  
+                    <a class="btn btn-primary" href="/misActividades" role="button">Mis Actividades</a>  
                 </div>
                 <div class="col-3 bar">
                     <a class="btn btn-primary" href="#" role="button">Tienda</a>  
                 </div>
             </div>
         </div>
-        <h2>Avtividades Disponibles</h2>
-    <div class = "col-md-8">
-        <table class="table table-striped">
+        <h2 class="text-center">Avtividades Disponibles</h2>
+    <div class = "col-md-19">
+        <table class="col-10">
             <thead>
-                <tr>
+                <tr> 
                     <th>
-                        Nombre
+                        <h3>Nombre de la Actividad</h3>
                     </th>
                     <th>
-                        Apellidos
+                        <h3>Monitor</h3>
                     </th>
                     <th>
-                        Telefono
+                        <h3>Dia</h3>
                     </th>
                     <th>
-                        DNI
+                        <h3>Hora</h3>
                     </th>
                     <th>
-                        Fecha de nacimiento
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                    <th>
-                        Ocupacion
+                        <h3>Duracion</h3>
                     </th>
                 </tr>
             </thead>
+            <br><br>
             <tbody>
-                <tr *ngFor="let employee of employeeService.employees">
-                    <td>{{ employee.name }}</td>
-                    <td>{{ employee.apellido}}</td>
-                    <td>{{ employee.telefono}}</td>
-                    <td>{{ employee.dni}}</td>
-                    <td>{{ employee.datanaixement }}</td>
-                    <td>{{ employee.email }}</td>
-                    <td>{{ employee.ocupacion }}</td>
-
+                <tr *ngFor ="let actividad of ActividadService.actividades">
+                    <td><p>{{ actividad.name }}</p></td>
+                    <td><p>{{ actividad.impartemon}}</p></td>
+                    <td><p>{{ actividad.dia}}</p></td>
+                    <td><p>{{ actividad.hora}}</p></td>
+                    <td><p>{{ actividad.duracion }}</p></td>
                 </tr>
-                    
             </tbody>
         </table>
 </div>

@@ -5,6 +5,10 @@ import { AbstractControl, NgForm } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { Cliente } from 'src/app/models/cliente';
+import { ClienteService } from 'src/app/services/clientes.service';
+
+
 
 
 
@@ -24,9 +28,9 @@ export class InicioComponent implements OnInit {
   }
 
   public cookieValue: string | undefined;
+  Cliente: any;
 
-  constructor(private cookieService: CookieService,private map: MapService,
-     private LoginService:LoginService, public router : Router) { 
+  constructor(private cookieService: CookieService,public ClienteService:ClienteService, private map: MapService,private LoginService:LoginService, public router : Router) { 
       
 
       
@@ -34,8 +38,8 @@ export class InicioComponent implements OnInit {
 
   }
 
-  cookie(){
-    this.cookieService.set('sesion-token', 'aaa');
+  cookie(id: string){
+    this.cookieService.set('sesion-token', id);
     this.cookieValue = this.cookieService.get('sesion-token')
   }
 
@@ -45,13 +49,24 @@ export class InicioComponent implements OnInit {
 
   login(_form: NgForm){
     this.LoginService.login(_form.value).subscribe(
-      res => {console.log(res)
-        this.cookie()
+      res => {
+        console.log(res)
+        var u = JSON.stringify(res);
+        var e = JSON.parse(u);
+        console.log(e)
+        this.cookie(e._id);
         this.router.navigate(["/main"])
-        
+
       },
       err => console.log(err)
     )
   }
+
+
+    // if (this.cookieService.get('sesion-token'))
+    
+
+  
+  
 
 }
