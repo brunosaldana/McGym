@@ -6,12 +6,6 @@ import { FormsModule } from '@angular/forms'
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
-
-
-
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeeComponent } from './components/employee/employee.component';
@@ -21,6 +15,7 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
+import { TareasComponent } from './components/tareas/tareas.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -33,7 +28,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MainComponent,
     ClienteComponent,
     ReservaComponent,
-    PageNotFoundComponent
+    TareasComponent,
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +43,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule.forRoot([
       {path: '', component:
       InicioComponent},
-        {path: 'empleados', component:
+      {path: 'tareas', component:
+      TareasComponent},
+      {path: 'empleados', component:
       EmployeeComponent},
       {path: 'clientes', component:
       ClienteComponent},
@@ -60,7 +58,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       {path: 'reserva', component:
       ReservaComponent},
       {path: '**', component:
-       PageNotFoundComponent}
+      PageNotFoundComponent},
     ])
   ],
   providers: [],

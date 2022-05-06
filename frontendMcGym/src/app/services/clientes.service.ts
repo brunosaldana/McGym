@@ -7,6 +7,9 @@ import { Cliente } from '../models/cliente';
   providedIn: 'root'
 })
 export class ClienteService {
+  deleteTarea(id: string) {
+    throw new Error('Method not implemented.');
+  }
   
   URL_API = 'http://localhost:4000/Clientes';
 

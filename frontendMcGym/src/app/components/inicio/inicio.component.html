@@ -27,9 +27,9 @@
                       <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)" (ngSubmit)="validation(loginForm)"> 
                           <div class="login">
                               <label class="usu text-white" >Usuario</label>
-                              <input required #email="ngModel" [(ngModel)]="user.email" name = "email" ngModel [email]="true" type="email" placeholder="Email" ngModel required>
+                              <input required #email="ngModel" [(ngModel)] = "user.email" name = "email" ngModel [email]="true" type="email" placeholder="Email" ngModel required>
                               <label class="text-white">Contraseña</label>
-                              <input required #password="ngModel" [(ngModel)]="user.password" name = "password" ngModel [email]="true" type="password" placeholder="password" ngModel required>
+                              <input required #password="ngModel" [(ngModel)] = "user.password" name = "password" ngModel [email]="true" type="password" placeholder="password" ngModel required>
 
                           </div>
                           <div class="entrar">

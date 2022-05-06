@@ -3,6 +3,7 @@ import { EmployeeComponent } from './components/employee/employee.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directives';
 import { Component } from '@angular/core';
+import { TareasComponent } from './components/tareas/tareas.component';
 
 
 
@@ -30,5 +31,10 @@ export class AppComponent implements AfterViewInit{
 
       const componentRef = viewContainerRef.createComponent<any>(ClienteComponent);
     }
+    generateComponent3(): void{
 
+      const viewContainerRef = this.dynamic.viewContainerRef;
+
+      const componentRef = viewContainerRef.createComponent<any>(TareasComponent);
+    }
 }
