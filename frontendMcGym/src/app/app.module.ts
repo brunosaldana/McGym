@@ -15,10 +15,10 @@ import { Forgot2Component } from './components/forgot2/forgot2.component';
 import { MainComponent } from './components/main/main.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
-import { TareasComponent } from './components/tareas/tareas.component';
+import { TareaComponent } from './components/tareas/tareas.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CookieService } from 'ngx-cookie-service';
-import { misActividadesComponent } from './misActividades/misActividades.component';
+import { misActividadesComponent } from './components/misActividades/misActividades.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';
 
 @NgModule({
@@ -34,7 +34,7 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
     PageNotFoundComponent,
     misActividadesComponent,
     ActividadesComponent,
-    TareasComponent,
+    TareaComponent,
     PageNotFoundComponent,
   ],
   imports: [
@@ -50,7 +50,7 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
       {path: '', component:
       InicioComponent},
       {path: 'tareas', component:
-      TareasComponent},
+      TareaComponent},
       {path: 'empleados', component:
       EmployeeComponent},
       {path: 'clientes', component:

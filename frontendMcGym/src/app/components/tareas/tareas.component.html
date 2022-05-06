@@ -8,43 +8,42 @@
         <div class = "card">
             <div class = "card-body">
                 <h1> TAREAS</h1>
-                <form #tareasForm = "ngForm" (ngSubmit)="addTareas(tareasForm)" (ngSubmit)="validation(tareasForm)">
-                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="tareasService.selectedTareas._id">                    
+
+                <form #tareaForm = "ngForm" (ngSubmit)="addTarea(tareaForm)" (ngSubmit)="validation(tareaForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="tareaService.selectedTarea._id">                    
                     <div class="form-group" >
-                        <input required #namemon = "ngModel" [(ngModel)]="tareasService.selectedTareas.namemon" name = "namemon" ngModel="namemon" type="text" class="form-control" placeholder="Nombre del Monitor" ngModel required>
-                        <div *ngIf ="namemon.touched && namemon.invalid" class="alert alert-danger">
-                            NOMBRE del monitor requerido
+                        <input required #name = "ngModel" [(ngModel)]="tareaService.selectedTarea.namemon" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                        <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
+                            NOMBRE requerido
                         </div>
                     </div>
                     <div class="form-group" >
-                        <input required #nametec="ngModel" [(ngModel)]="tareasService.selectedTareas.nametec" name = "nametec" ngModel="nametec" type="text" class="form-control" placeholder="Nombre del Tecnico" ngModel required>
-                        <div *ngIf ="nametec.touched && nametec.invalid" class="alert alert-danger">
-                            TECNICO requerido
+                        <input required #apellido="ngModel" [(ngModel)]="tareaService.selectedTarea.nametec" name = "apellido" ngModel="apellido" type="text" class="form-control" placeholder="Apellido" ngModel required>
+                        <div *ngIf ="apellido.touched && apellido.invalid" class="alert alert-danger">
+                            APELLIDOS requeridos
                         </div>
                     </div>
                     <div class="form-group" >
-                        <input required #fecha="ngModel" [(ngModel)]="tareasService.selectedTareas.fecha" name = "fecha" ngModel="fecha" type="date" class="form-control" placeholder="Fecha" ngModel required>
-                        <div *ngIf ="fecha.touched && fecha.invalid" class="alert alert-danger">
+                        <input required #telefono="ngModel" [(ngModel)]="tareaService.selectedTarea.fecha" name = "telefono" ngModel="telefono" type="text" class="form-control" placeholder="Telefono" ngModel required>
+                        <div *ngIf ="telefono.touched && telefono.invalid" class="alert alert-danger">
                             TELEFONO requerido
                         </div>
                     </div>
                     <div class="form-group" >
-                        <input required #hora="ngModel" [(ngModel)]="tareasService.selectedTareas.hora" name = "hora" ngModel="hora" type="time" class="form-control" placeholder="Hora" ngModel required>
-                        <div *ngIf ="hora.touched && hora.invalid" class="alert alert-danger">
-                            FECHA NACIMIENTO requerida
+                        <input pattern="[0-9]{8}[A-Za-z]{1}" required #dni="ngModel" [(ngModel)]="tareaService.selectedTarea.hora" name = "dni" ngModel="dni" type="text" class="form-control" placeholder="DNI" ngModel required>
+                        <div *ngIf ="dni.touched && dni.invalid" class="alert alert-danger">
+                            DNI requerido
                         </div>
                     </div>
                     <div class="form-group" >
-                        <input required #incidencia="ngModel" [(ngModel)]="tareasService.selectedTareas.incidencia" name = "incidencia" ngModel="incidencia" type="text" class="form-control" placeholder="Incidencia" ngModel required>
-                        <div *ngIf ="hora.touched && hora.invalid" class="alert alert-danger">
-                            INCIDENCIA requerida
+                        <input required #datanaixement="ngModel" [(ngModel)]="tareaService.selectedTarea.incidencia" name = "datanaixement" ngModel="datanaixement" type="date" class="form-control" placeholder="Fecha de nacimiento" ngModel required>
+                        <div *ngIf ="datanaixement.touched && datanaixement.invalid" class="alert alert-danger">
+                            FECHA NACIMIENTO requerida
                         </div>
                     </div>
-                    <div class="form-group">
-                    </div>
-                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!tareasForm.valid ? true : null" >Save</button>
+                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!tareaForm.valid ? true : null" >Save</button>
                 </form>
-                <button class="btn btn-primary mr-2" (click)="resetForm(tareasForm)">Clean</button>
+                <button class="btn btn-primary mr-2" (click)="resetForm(tareaForm)">Clean</button>
             </div>
         </div>
         
@@ -71,23 +70,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor ="let tareas of tareasService.tareas">
-                    <td>{{ tareas.namemon }}</td>
-                    <td>{{ tareas.nametec}}</td>
-                    <td>{{ tareas.fecha}}</td>
-                    <td>{{ tareas.hora}}</td>
-                    <td>{{ tareas.incidencia }}</td>
+                <tr *ngFor ="let tarea of tareaService.tareas">
+                    <td>{{ tarea._id }}</td>
+                    <td>{{ tarea.namemon}}</td>
+                    <td>{{ tarea.nametec}}</td>
+                    <td>{{ tarea.fecha}}</td>
+                    <td>{{ tarea.hora }}</td>
+                    <td>{{ tarea.incidencia }}</td>
                     <td>
-                        <button class="btn btn-warning btn-sm" (click)="editTarea(tareas)"> 
+                        <button class="btn btn-warning btn-sm" (click)="editTarea(tarea)"> 
                             <i class="material-icons"> edit </i>  
                         </button>
-                        <button class="btn btn-danger btn-sm" (click)="deleteTareas(tareas._id)"> 
+                        <button class="btn btn-danger btn-sm" (click)="deleteTarea(tarea._id)"> 
                             <i class="material-icons"> delete </i>  
                         </button>
                     </td>
                 </tr>
                     
             </tbody>
+
         </table>
 
 

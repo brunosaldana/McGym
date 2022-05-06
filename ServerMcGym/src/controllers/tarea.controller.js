@@ -7,24 +7,40 @@ tarea.getTareas = async (req, res, next) => {
   res.json(tareas);
 };
 
-tarea.createTarea = async (req, res, next) => {
-    const tarea = new Tarea({
-      namemon: req.body.namemon,
-      nametec: req.body.nametec,
-      fecha: req.body.fecha,
-      hora: req.body.hora,
-      incidencia: req.body.incidencia
-    });
-    await tarea.save();
-    res.json({ status: "Tarea created" });
-  };
+  tarea.createTarea = async (req, res, next) => {
+    var result = await getTareamail(req)
+    if(result){
+      res.send(true) 
+   
+    } else {
+      const tarea = new Tarea({
+        namemon: req.body.namemon,
+        nametec: req.body.nametec,
+        fecha: req.body.fecha,
+        hora: req.body.hora,
+        incidencia: req.body.incidencia
+      });
+      await tarea.save();
+      res.json({ status: "Employee created" });
   
+    }
+  }; 
 
 
 tarea.getTarea = async (req, res, next) => {
   const { id } = req.params;
   const tarea = await Tarea.findById(id);
   res.json(tarea);
+};
+
+
+const getTareamail = async (req, res) => {
+  const tarea = await Tarea.findOne( {name: req.body.name} );
+  if(tarea){
+    return true
+  } else {
+    return false
+  }
 };
 
 
