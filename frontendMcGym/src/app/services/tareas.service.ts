@@ -1,50 +1,48 @@
 import { Injectable } from '@angular/core';
+import { Tarea } from '../models/tareas';
 import {HttpClient} from '@angular/common/http';
-import { Tareas } from '../models/tareas';
 
-Injectable({
+
+@Injectable({
   providedIn: 'root'
 })
-export class TareasService {
-  
+export class TareaService {
+  [x: string]: any;
+
   URL_API = 'http://localhost:4000/Tareas';
 
-  selectedTareas: Tareas = {
-    nametec: '',
+  selectedTarea: Tarea = {
+    _id: '',
     namemon: '',
+    nametec: '',
     fecha: '',
     hora: '',
     incidencia: '',
-    _id: ''
-  };
+    };
+
+
+    tareas: Tarea[] = [];
+    controls: any;
   
-
-  tareas: Tareas[] = [];
-  controls: any;
-
-
-  constructor(private http: HttpClient) {
-
-  }
   
-
-  getTareas(){
-    return this.http.get<Tareas[]>(this.URL_API);
-    
-  }
-  createTareas(tarea: Tareas){
+    constructor(private http: HttpClient) {
+  
+    }
+    getTareas(){
+      return this.http.get<Tarea[]>(this.URL_API);
       
-      return this.http.post(this.URL_API,tarea);   
-  }
-
-  putTareas(tarea: Tareas) {
-    return this.http.put(this.URL_API + `/${tarea._id}`, tarea);
+    }
+    createTarea(cliente: Tarea){
+        
+        return this.http.post(this.URL_API,cliente);   
+    }
   
-  }
-
-  deleteTareas(_id: string){
-    return this.http.delete(`${this.URL_API}/${_id}`)
-  }
-
-
+    putTarea(cliente: Tarea) {
+      return this.http.put(this.URL_API + `/${cliente._id}`, cliente);
+    
+    }
+  
+    deleteTarea(_id: string){
+      return this.http.delete(`${this.URL_API}/${_id}`)
+    }
 }

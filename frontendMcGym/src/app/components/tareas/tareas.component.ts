@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Tareas } from 'src/app/models/tareas';
-import { TareasService } from 'src/app/services/tareas.service'
+import { Tarea } from 'src/app/models/tareas';
+import { TareaService } from 'src/app/services/tareas.service';
+
 
 @Component({
   selector: 'app-tareas',
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.css']
 })
-export class TareasComponent implements OnInit {
+export class TareaComponent implements OnInit {
 
-  constructor(public tareasService: TareasService) {    
-
-   }
-validation(_form: NgForm){
+  constructor(public tareaService: TareaService) {    
+    
+  }
+  validation(_form: NgForm){
     console.log("valida")
 
   }
@@ -28,18 +29,18 @@ validation(_form: NgForm){
 
 
   getTareas(){
-     this.tareasService.getTareas().subscribe(
+     this.tareaService.getTareas().subscribe(
       res => {
-        this.tareasService.tareas = res;
+        this.tareaService.tareas = res;
 
       },
       err => console.log(err)
     )
   }
 
-  addTareas(form: NgForm){
+  addTarea(form: NgForm){
     if(form.value._id) {
-      this.tareasService.putTareas(form.value).subscribe(
+      this.tareaService.putTarea(form.value).subscribe(
         res =>{ 
           console.log(res)
           location.reload();
@@ -48,7 +49,7 @@ validation(_form: NgForm){
         
       )
     } else {
-      this.tareasService.createTareas(form.value).subscribe(
+      this.tareaService.createTarea(form.value).subscribe(
         _res => {
           this.getTareas();
           form.reset();
@@ -58,9 +59,9 @@ validation(_form: NgForm){
     );
     }
   }
-  deleteTareas(id: string){
+  deleteTarea(id: string){
     if(confirm('Seguro? ')){
-      this.tareasService.deleteTareas(id).subscribe(
+      this.tareaService.deleteTarea(id).subscribe(
       (_res) => {
         this.getTareas();
       },
@@ -68,9 +69,8 @@ validation(_form: NgForm){
       );
     }
   }
-  editTarea(tareas: Tareas){
-    this.tareasService.selectedTareas = tareas;
+  editTarea(cliente: Tarea){
+    this.tareaService.selectedTarea = cliente;
 
   }
-  
 }
