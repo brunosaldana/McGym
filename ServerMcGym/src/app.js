@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-
 const app = express();
 
 // Settings
@@ -16,12 +15,8 @@ app.use(express.urlencoded({ extended: false }));
 // Routes
 app.use("/", require("./routes/mcgym.routes"));
 app.use("/", require("./routes/cliente.routes"));
-
 app.use("/", require("./routes/tarea.routes"));
-
-
 app.use("/", require("./routes/login.routes"));
-
 app.use("/", require("./routes/actividad.routes"));
 
 
