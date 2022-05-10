@@ -8,11 +8,6 @@ tarea.getTareas = async (req, res, next) => {
 };
 
   tarea.createTarea = async (req, res, next) => {
-    var result = await getTareamail(req)
-    if(result){
-      res.send(true) 
-   
-    } else {
       const tarea = new Tarea({
         namemon: req.body.namemon,
         nametec: req.body.nametec,
@@ -21,10 +16,9 @@ tarea.getTareas = async (req, res, next) => {
         incidencia: req.body.incidencia
       });
       await tarea.save();
-      res.json({ status: "Employee created" });
+      res.json({ status: "Tarea created" });
   
-    }
-  }; 
+    };
 
 
 tarea.getTarea = async (req, res, next) => {

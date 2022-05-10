@@ -15,7 +15,7 @@ export class TareaComponent implements OnInit {
     
   }
   validation(_form: NgForm){
-    console.log("valida")
+    console.log("OKEYYYY")
 
   }
 
@@ -69,6 +69,7 @@ export class TareaComponent implements OnInit {
       );
     }
   }
+
   editTarea(cliente: Tarea){
     this.tareaService.selectedTarea = cliente;
 
