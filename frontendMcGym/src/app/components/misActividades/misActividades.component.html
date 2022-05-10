@@ -5,42 +5,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <title>Document</title>
 </head>
 <body>
-    <div id="container">
-
-        <div class="principal" >
-            <div class="user">
-                <div class="logo">
-                    <img id="logo" src="/assets/McgymLogo.png" >
-                </div>
-                <div class="title">
-                    <h2>Horario McGym</h2>
-                </div>
-                <div class="links">
-                    <a href=""><i class="fa-solid fa fa-cart-arrow-down"></i></a>
-                    <a href=""><i class="fa-solid fa fa-user"></i></a>
-                    <a href=""><i class="fa-solid fa fa-arrow-right"></i></a>            
-                </div>
+    
+    <div class="principal" >
+        <div class="user">
+            <div class="logo">
+                <img id="logo" src="/assets/McgymLogo.png" >
             </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-3 bar"> 
-                        <a class="btn btn-primary" href="/main" role="button">Horario McGym</a>
-                    </div>
-                    <div class="col-3 bar">
-                        <a class="btn btn-primary" href="/reserva" role="button">Reservar Actividades</a>
-                    </div>
-                    <div class="col-3 bar">
-                        <a class="btn btn-primary" href="/misActividades" role="button">Mis Actividades</a>  
-                    </div>
-                    <div class="col-3 bar">
-                        <a class="btn btn-primary" href="#" role="button">Tienda</a>  
-                    </div>
+            <div class="title">
+                <h2>Horario McGym</h2>
+            </div>
+            <div class="links">
+                <a href=""><i class="fa-solid fa fa-cart-arrow-down"></i></a>
+                <a href=""><i class="fa-solid fa fa-user"></i></a>
+                <a href=""(click)="salir()"><i class="fa-solid fa fa-arrow-right"></i></a>            
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3 bar"> 
+                    <a class="btn btn-primary" href="/main" role="button">Horario McGym</a>
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary" href="/reserva" role="button">Reservar Actividades</a>
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary" href="/misActividades" role="button">Mis Actividades</a>  
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary" href="#" role="button">Tienda</a>  
                 </div>
             </div>
         </div>
+        <div class="fondo">
+        <h2 class="text-center">Avtividades Disponibles</h2>
+    <div class = "col-md-19">
+        <table class="col-10">
+            <thead>
+                <tr> 
+                    <th>
+                        <h3 class="color">Nombre de la Actividad</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Monitor</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Dia</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Hora</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Duracion</h3>
+                    </th>
+                </tr>
+            </thead>
+            <br><br>
+            <tbody>
+                <tr *ngFor ="let actividad of ActividadService.actividades">
+                    <td><p>{{ actividad.name }}</p></td>
+                    <td><p>{{ actividad.impartemon}}</p></td>
+                    <td><p>{{ actividad.dia}}</p></td>
+                    <td><p>{{ actividad.hora}}</p></td>
+                    <td><p>{{ actividad.duracion }}</p></td>
+                    <td type="button" class="btn btn-primary btn-sm"> Reservar </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    </div>
+</div>
 </body>
+
 </html>
+
