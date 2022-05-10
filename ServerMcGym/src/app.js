@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
-
 const app = express();
 
 // Settings
@@ -20,5 +19,6 @@ app.use(require("./routes/tarea.routes"));
 app.use(require("./routes/login.routes"));
 app.use(require("./routes/actividad.routes"));
 app.use(require("./routes/misActividades.routes"));
+
 
 module.exports = app;
