@@ -8,7 +8,6 @@
         <div class = "card">
             <div class = "card-body">
                 <h1> CLIENTES</h1>
-
                 <form #clienteForm = "ngForm" (ngSubmit)="addCliente(clienteForm)" (ngSubmit)="validation(clienteForm)">
                     <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="clienteService.selectedCliente._id">                    
                     <div class="form-group" >
@@ -60,7 +59,6 @@
                 <button class="btn btn-primary mr-2" (click)="resetForm(clienteForm)">Clean</button>
             </div>
         </div>
-        
     </div>
     <div class = "col-md-8">
         <table class="table table-striped">
