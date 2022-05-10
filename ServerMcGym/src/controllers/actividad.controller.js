@@ -1,5 +1,7 @@
 const Actividad = require("../models/actividades");
 
+
+
 const actividad = {};
 
 actividad.getActividades = async (req, res, next) => {
@@ -21,7 +23,7 @@ actividad.createActividad = async (req, res, next) => {
       duracion: req.body.duracion, 
     });
     await actividad.save();
-    res.json({ status: "Employee created" });
+    res.json({ status: "actividad created" });
 
   }
 }; 
@@ -53,6 +55,5 @@ actividad.deleteActividad= async (req, res, next) => {
   await Actividad.findByIdAndRemove(req.params.id); 
   res.json({ status: "Actividad Deleted" });
 };
-
 
 module.exports = actividad; 

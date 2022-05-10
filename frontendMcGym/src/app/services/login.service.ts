@@ -11,6 +11,10 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   login(user: any){
-    return this.http.post(this.URL, user);
+    return this.http.post(this.URL + '/login', user);
+  }
+
+  idExists(user:any){
+    return this.http.post(this.URL + '/id', user)
   }
 }

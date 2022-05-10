@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActividadesService } from 'src/app/services/actividades.service';
+import { MisActividadesService } from 'src/app/services/mis-actividades.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
@@ -12,21 +12,20 @@ import { Router } from '@angular/router';
 })
 export class misActividadesComponent implements OnInit {
 
-  constructor(public ActividadService: ActividadesService,private cookieService: CookieService, public router : Router) { }
+  constructor(public misActividadesService: MisActividadesService,private cookieService: CookieService, public router : Router) { }
 
   ngOnInit(): void {
-    this.getEmployees();
+    this.getMisActividades();
     console.log("funciona")
     if (!this.cookieService.get('sesion-token')){
       this.router.navigate(["/"])
     }
   }
 
-  getEmployees(){
-    this.ActividadService.getActividades().subscribe(
+  getMisActividades(){
+    this.misActividadesService.getMisActividades().subscribe(
      res => {
-       this.ActividadService.actividades = res;
-
+       this.misActividadesService.misActividades = res;
      },
      err => console.log(err)
    )

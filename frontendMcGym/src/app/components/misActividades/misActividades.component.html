@@ -66,12 +66,12 @@
             </thead>
             <br><br>
             <tbody>
-                <tr *ngFor ="let actividad of ActividadService.actividades">
-                    <td><p>{{ actividad.name }}</p></td>
-                    <td><p>{{ actividad.impartemon}}</p></td>
-                    <td><p>{{ actividad.dia}}</p></td>
-                    <td><p>{{ actividad.hora}}</p></td>
-                    <td><p>{{ actividad.duracion }}</p></td>
+                <tr *ngFor ="let misActividades of misActividadesService.misActividades">
+                    <td><p>{{ misActividades.name }}</p></td>
+                    <td><p>{{ misActividades.impartemon}}</p></td>
+                    <td><p>{{ misActividades.dia}}</p></td>
+                    <td><p>{{ misActividades.hora}}</p></td>
+                    <td><p>{{ misActividades.duracion }}</p></td>
                     <td type="button" class="btn btn-primary btn-sm"> Reservar </td>
                 </tr>
             </tbody>

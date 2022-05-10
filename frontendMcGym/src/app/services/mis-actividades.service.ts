@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {MisActividades} from '../models/mis-actividades'
+import { CookieService } from 'ngx-cookie-service';
+import { Actividad } from '../models/actividad';
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class MisActividadesService {
+  [x: string]: any;
+
+  URL_API = 'http://localhost:4000/misActividades';
+
+  selectedMisActividades: MisActividades = {
+    _id: '',
+    name: '',
+    impartemon: '',
+    dia: '',
+    hora: '',
+    duracion: '',
+    cliId: ''
+  };
+
+
+misActividades: MisActividades[] = [];
+controls: any;
+
+
+  constructor(private http: HttpClient, public cookieService: CookieService) {
+
+  }
+
+
+  getMisActividades(){
+    const cid = this.cookieService.get('sesion-token')
+    return this.http.get<MisActividades[]>(this.URL_API+ `/${cid}`);
+    
+  }
+
+  createMisActividades(actividad:Actividad){
+    const cid = this.cookieService.get('sesion-token')
+    return this.http.post(this.URL_API+`/${cid}`,actividad);
+ 
+  }
+
+
+
+  // putReserva(actividad:Actividad){
+  //   const cid = this.cookieService.get('sesion-token')
+  //   return this.http.put(this.URL_API + `/${actividad._id}`, actividad);
+  // }
+
+}

@@ -49,7 +49,9 @@ export class InicioComponent implements OnInit {
         console.log(res)
         var u = JSON.stringify(res);
         var e = JSON.parse(u);
+        console.log("e")
         console.log(e)
+        e = res
         const cook = this.cookie(e._id);
         if (this.cookieService.get('sesion-token')&& this.LoginService.idExists(e.id)){
           this.router.navigate(["/main"])
@@ -57,11 +59,7 @@ export class InicioComponent implements OnInit {
 
         } else { 
           this.router.navigate([""])
-
         }
-
-        
-
       },
       err => console.log(err)
     )

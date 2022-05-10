@@ -1,8 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActividadesService } from 'src/app/services/actividades.service';
+import { MisActividadesService } from 'src/app/services/mis-actividades.service';
+
 import { Employee } from 'src/app/models/employee';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { Actividad } from 'src/app/models/actividad';
+
+
+
 
 
 
@@ -13,12 +19,12 @@ import { Router } from '@angular/router';
 })
 export class ReservaComponent implements OnInit {
 
-  constructor(public ActividadService: ActividadesService,private cookieService: CookieService, public router : Router) {    
+  constructor(public misActividadesService: MisActividadesService,public ActividadService: ActividadesService,private cookieService: CookieService, public router : Router) {    
     
   }
 
   ngOnInit(): void { 
-    this.getEmployees();
+    this.getActivities();
     if(this.cookieService.get('sesion-token')){
       this.router.navigate(["/reserva"])
     }else{
@@ -27,7 +33,7 @@ export class ReservaComponent implements OnInit {
     }
   }
   
-  getEmployees(){
+  getActivities(){
      this.ActividadService.getActividades().subscribe(
       res => {
         this.ActividadService.actividades = res;
@@ -40,5 +46,38 @@ export class ReservaComponent implements OnInit {
     this.cookieService.delete('sesion-token')
   }
 
+  reservar(actividad:Actividad){
+    // if(actividad._id) {
+    //   this.misActividadesService.putReserva(actividad).subscribe(
+    //     res =>{ 
+    //       console.log(res)
+    //       location.reload();
+    //     },
+    //     (err) => console.error(err)
+        
+    //   )
+    // } else {
+      var u = JSON.stringify(actividad);
+      var e = JSON.parse(u);
+      console.log(u)
+    this.misActividadesService.createMisActividades(e).subscribe(
+      _res => {
+
+        this.getActivities();
+      },
+      err => console.log(err)
+    
+  );
+  // }
+  }
+
+
+
+
+  tokenSesion=(this.cookieService.get('sesion-token'))
+
+
 
 }
+
+

@@ -1,18 +1,19 @@
 ###
 
-GET http://localhost:4000/tareas
+GET http://localhost:4000/misActividades
 
 ###
 
-POST http://localhost:4000/tareas HTTP/1.1
+POST http://localhost:4000/misActividades/6273fef2d59f6ce526f5466c HTTP/1.1
 Content-Type: application/json
 
 {
-    "namemon": "aguarequeteturbiaiaaa",
-    "nametec": "edsaasdu",
-    "fecha": "521233",
-    "hora": "12:20",
-    "incidencia": "no funciona mi vida gfdgesto es una basura"
+    "name": "string",
+    "impartemon": "string",
+    "dia": "string",
+    "hora": "string",
+    "duracion": "string",
+    "cliId": "string"
 }
 
 
