@@ -1,5 +1,5 @@
 const express = require("express");
-const router = express.Router();
+const router = express.Router(); 
 
 const tarea = require("../controllers/tarea.controller");
 
@@ -14,4 +14,4 @@ router.put("/tareas/:id", tarea.editTarea);
 router.delete("/tareas/:id", tarea.deleteTarea);   
 
 
-module.exports = router;  
+module.exports = router;   
