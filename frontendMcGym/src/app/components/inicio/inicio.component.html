@@ -16,13 +16,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="principal">
+  <div class="principal">
             <nav class="navbar-dark bg-dark">
                 <div class="container">
-                  <div class="titulo">
-                    <a class="navbar-brand text-lg-left" href="/employee">McGym</a>
+                  <div class="d-flex align-items-center">
+                  <img class="logo" src="/assets/McgymLogo.png" alt="">
+                    <p class="nav" href="/employee">McGym</p>
                   </div>
-                  <div class="form">
+                  <div class="d-flex justify-content-end">
 
                       <form  #loginForm="ngForm" (ngSubmit)="login(loginForm)"> 
                           <div class="login">
@@ -50,7 +51,7 @@
                      nutricion/alimentacion y bienestar fisico</p>
               </div>
               <div class="col-sm" >
-                <h1>NUESTRA SALA MacGYM</h1>
+                <h1>NUESTRA SALA McGYM</h1>
                 <p class="h5">En la sala de nuestro gimnasio McGym encontraras mas de 50 maquinas de entrenamiento y cuenta con un repertorio de pesas individuales de entre 0.5kg hasta 50kg<p>
               </div>
             </div>
@@ -71,14 +72,14 @@
                   pesetting, remaining essentially unchanged</p>
                 </div>
               <div class="imagen col-5">
-                <img src="/assets/mc.jpeg" class="" alt="Responsive image" >
+                <img src="/assets/tienda.png" class="" alt="Responsive image" >
               </div>
             </div>
           </div>
           <div class="container">
             <div class="  row text-center">
               <div class="imagen col-5">
-                <img src="/assets/mc.jpeg" class="" alt="Responsive image" >
+                <img src="/assets/sala0.png" class="" alt="Responsive image" >
               </div>
                 <div class=" text col-5" >
                   <p class="h5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
@@ -88,25 +89,33 @@
                 </div>
             </div>
           </div>
+          <div class="container">
+            <p class="h5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+              Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer
+               took a galley of type and scrambled it to make a type specimen book. It has survived not only 
+             so the leap into electronic typesetting, remaining essentially unchanged</p>
+            
+          </div>
     </div>
 
 <div class="slider">
   
   <div class="slides">
     <div id="slide-1">
-      <img src="/assets/horario.png" alt="">
+      <img class="imgCarru" src="/assets/horario.png" alt="" >
     </div>
     <div id="slide-2">
-      2
+      <img class="imgCarru" src="/assets/sala1gym.png" alt="">
     </div>
     <div id="slide-3">
-      3
+      <img class="imgCarru" src="/assets/sala2gym.png" alt="">
+      
     </div>
     <div id="slide-4">
-      4
+      <img class="imgCarru" src="/assets/mc.jpeg" alt="" >
     </div>
     <div id="slide-5">
-      5
+      <img class="imgCarru" src="/assets/horario.png" alt="" >
     </div>
   </div>
 </div>

@@ -72,7 +72,7 @@
                     <td><p>{{ misActividades.dia}}</p></td>
                     <td><p>{{ misActividades.hora}}</p></td>
                     <td><p>{{ misActividades.duracion }}</p></td>
-                    <td type="button" class="btn btn-primary btn-sm"> Reservar </td>
+                    <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
                 </tr>
             </tbody>
         </table>

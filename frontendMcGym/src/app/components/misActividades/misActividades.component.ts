@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MisActividadesService } from 'src/app/services/mis-actividades.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { Actividad } from 'src/app/models/actividad';
+
 
 
 
@@ -30,6 +32,21 @@ export class misActividadesComponent implements OnInit {
      err => console.log(err)
    )
  }
+
+ deleteReserva(actividad:Actividad){
+  var u = JSON.stringify(actividad);
+  var e = JSON.parse(u);
+  if(confirm('Seguro? ')){
+    this.misActividadesService.deleteReserva(e._id).subscribe(
+    (_res) => {
+      this.getMisActividades();
+    },
+    (err) => console.error(err)
+    );
+  }
+}
+
+
 
   salir(){
     this.cookieService.delete('sesion-token')

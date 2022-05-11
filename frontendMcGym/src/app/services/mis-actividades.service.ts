@@ -46,6 +46,9 @@ controls: any;
  
   }
 
+  deleteReserva(_id: string){
+    return this.http.delete(`${this.URL_API}/${_id}`)
+  }
 
 
   // putReserva(actividad:Actividad){

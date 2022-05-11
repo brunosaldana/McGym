@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {  NgForm } from '@angular/forms';
 import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/clientes.service';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-cliente',
@@ -11,7 +15,7 @@ import { ClienteService } from 'src/app/services/clientes.service';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor(public clienteService: ClienteService) {    
+  constructor(public clienteService: ClienteService,private cookieService: CookieService, public router : Router) {    
     
   }
   validation(_form: NgForm){
@@ -20,7 +24,15 @@ export class ClienteComponent implements OnInit {
   }
 
   ngOnInit(): void { 
+    // if (this.cookieService.get('sesion-token')){
+    //   this.router.navigate(["/main"])
+
+
+    // } else { 
+    //   this.router.navigate([""])
+    // }
     this.getClientes();
+
   }
 
   resetForm(_form: NgForm){

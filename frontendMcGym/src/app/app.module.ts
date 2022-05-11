@@ -16,7 +16,7 @@ import { MainComponent } from './components/main/main.component';
 import { ClienteComponent } from './components/cliente/cliente.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
 import { TareaComponent } from './components/tareas/tareas.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { CookieService } from 'ngx-cookie-service';
 import { misActividadesComponent } from './components/misActividades/misActividades.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';

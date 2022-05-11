@@ -1,4 +1,7 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {  NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-forgot1',
@@ -12,4 +15,9 @@ export class Forgot1Component implements OnInit {
   ngOnInit(): void {
   }
 
+
+  reset1(_form: NgForm){
+
+
+  }
 }

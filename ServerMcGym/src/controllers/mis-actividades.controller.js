@@ -22,12 +22,18 @@ reserva.createMisActividad = async (req, res, next) => {
   res.json({ status: "reserva created" });
 };
 
+reserva.deleteReserva= async (req, res, next) => {
+  await Reserva.findByIdAndRemove(req.params.id); 
+  res.json({ status: "reserva Deleted" });
+};
+
 
 // reserva.putReserva = async (req, res, next) => {
 //   const { id } = req.params;
 //   await Reserva.findByIdAndUpdate(id, {$set: req.body});
 //   res.json({ status: "Reserva Updated" });
 // };
+
 
 // reserva.addReserva = async (req, res, next) => {
 //     const reserva = new Actividad({

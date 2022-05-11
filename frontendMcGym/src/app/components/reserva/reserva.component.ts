@@ -47,8 +47,10 @@ export class ReservaComponent implements OnInit {
   }
 
   reservar(actividad:Actividad){
-    // if(actividad._id) {
-    //   this.misActividadesService.putReserva(actividad).subscribe(
+    // var u = JSON.stringify(actividad);
+    // var e = JSON.parse(u);
+    // if(e._id) {
+    //   this.misActividadesService.putReserva(e).subscribe(
     //     res =>{ 
     //       console.log(res)
     //       location.reload();

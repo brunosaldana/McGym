@@ -1,6 +1,14 @@
 .principal {
   background: rgb(235, 61, 61);
 }
+.nav {
+  color:white;
+  font-size: 5vw;
+}
+.logo {
+  margin-top: 2vw;
+  width: 10vw;
+}
 
 h1 {
   color: white;
@@ -11,39 +19,24 @@ h1 {
   font-size: 1.2vw;
 }
 
+/* mapa */
 #visitUsContainer {
   margin-top: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+#map {
+  width: 50%;
+  height: 55vh;
+}
 
 .visitTitle {
   color: rgb(60, 9, 50);
 }
 
-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
+/* mapa */
 
-.icons {
-  display: flex;
-  justify-content: center;
-  margin: 1vw;
-}
-
-.form {
-  display: flex;
-  justify-content: end;
-}
-
-#map {
-  width: 50%;
-  height: 55vh;
-}
 
 input {
   margin-right: 10px;
@@ -73,15 +66,7 @@ button {
 a {
   margin: 2vw;
 }
-.titulo {
-  display: flex;
-  align-items: center;
-  margin-left: 15vw;
-}
 
-.navbar-brand {
-  font-size: 40px;
-}
 
 p {
   margin-top: 10px;
@@ -103,7 +88,34 @@ img {
   height: 55vh;
 }
 
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+}
+
+
+
+
 /* carrusel */
+
+.imgCarru {
+  width: 60vw;
+  height: 100%;
+}
+
+
+
+/* slider */
 .slider {
   width: 60vw;
   text-align: center;
