@@ -13,6 +13,9 @@ import { TareaComponent } from './components/tareas/tareas.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements AfterViewInit{
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
   @ViewChild(DynamicComponentDirective) dynamic !: DynamicComponentDirective;
 
   ngAfterViewInit(): void{

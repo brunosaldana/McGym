@@ -1,34 +1,35 @@
 ###
 
-GET http://localhost:4000/misActividades
+GET http://localhost:4000/clientes
 
 ###
 
-POST http://localhost:4000/misActividades/6273fef2d59f6ce526f5466c HTTP/1.1
+POST http://localhost:4000/clientes HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "string",
-    "impartemon": "string",
-    "dia": "string",
-    "hora": "string",
-    "duracion": "string",
-    "cliId": "string"
+    "name": "Bruno",
+    "apellido": "Saldaña Serrano ",
+    "telefono": 111222333,
+    "datanaixement": "2000-05-12",
+    "dni": "44455566c",
+    "email": "dudo2daw@gmail.com",
+    "password": "Hola1234"
 }
 
 
 ###
 
-GET http://localhost:4000/ HTTP/1.1
+GET http://localhost:4000/clientes/627bdafc027a527680cd8ed5 HTTP/1.1
 
 ###
 
-PUT http://localhost:4000/
+PUT http://localhost:4000/clientes/627bdafc027a527680cd8ed5
 Content-Type: application/json
 
 {
-    "name": "brunoeduupdated"
+    "name": "Bruno2daw"
 }
 
 ###
-DELETE http://localhost:4000/626834c4ccbaa744862d2234
+DELETE http://localhost:4000/clientes/627bdafc027a527680cd8ed5

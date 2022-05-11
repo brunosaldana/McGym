@@ -23,7 +23,7 @@ cliente.createCliente = async (req, res, next) => {
       password: req.body.password,
     });
     await cliente.save();
-    res.json({ status: "Employee created" });
+    res.json({ status: "Cliente creado" });
 
   }
 }; 
