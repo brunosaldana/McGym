@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { CookieService } from 'ngx-cookie-service';
 import { misActividadesComponent } from './components/misActividades/misActividades.component';
 import { ActividadesComponent } from './components/actividades/actividades.component';
+import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
     ActividadesComponent,
     TareaComponent,
     PageNotFoundComponent,
+    VistatareasComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +53,8 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
       InicioComponent},
       {path: 'tareas', component:
       TareaComponent},
+      {path: 'vistatareas', component:
+      VistatareasComponent},
       {path: 'empleados', component:
       EmployeeComponent},
       {path: 'clientes', component:

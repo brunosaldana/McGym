@@ -18,8 +18,6 @@ export class MainComponent implements OnInit {
   constructor(private cookieService: CookieService, public router : Router) { 
       
 
-      
-
 
   }
 
