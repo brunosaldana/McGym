@@ -42,6 +42,7 @@
             </div>
         </div>
         <div class="fondo">
+<<<<<<< HEAD
             <h2 class="text-center">Avtividades Disponibles</h2>
             <div class = "col-md-19">
                 <table class="col-10">
@@ -78,6 +79,43 @@
                 </table>
             </div>
         </div>
+=======
+        <h2 class="text-center">Actividades Disponibles</h2>
+    <div class = "col-md-19">
+        <table class="col-10">
+            <thead>
+                <tr> 
+                    <th>
+                        <h3 class="color">Nombre de la Actividad</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Monitor</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Dia</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Hora</h3>
+                    </th>
+                    <th>
+                        <h3 class="color">Duracion</h3>
+                    </th>
+                </tr>
+            </thead>
+            <br><br>
+            <tbody>
+                <tr *ngFor ="let misActividades of misActividadesService.misActividades">
+                    <td><p>{{ misActividades.name }}</p></td>
+                    <td><p>{{ misActividades.impartemon}}</p></td>
+                    <td><p>{{ misActividades.dia}}</p></td>
+                    <td><p>{{ misActividades.hora}}</p></td>
+                    <td><p>{{ misActividades.duracion }}</p></td>
+                    <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+>>>>>>> 46cf456b0b0fbbfa2908f4512a529f82586c5055
     </div>
 </body>
 

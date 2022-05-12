@@ -36,7 +36,12 @@ body {
 
 h2 {
   width: 100%;
+<<<<<<< HEAD
+=======
+  color: black;
+>>>>>>> 46cf456b0b0fbbfa2908f4512a529f82586c5055
 }
+
 .title {
   width: 100%;
   margin-top: 2%;

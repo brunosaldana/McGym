@@ -9,6 +9,7 @@ import { TareaService } from 'src/app/services/tareas.service';
   templateUrl: './tareas.component.html',
   styleUrls: ['./tareas.component.css']
 })
+
 export class TareaComponent implements OnInit {
 
   constructor(public tareaService: TareaService) {    
