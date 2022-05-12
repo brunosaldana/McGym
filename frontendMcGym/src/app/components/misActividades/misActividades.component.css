@@ -2,6 +2,10 @@
 body {
   background: rgb(235, 61, 61);
 }
+.fondo{
+  background-color: rgb(255, 190, 190);
+  
+}
 
 .user {
   display: flex;
