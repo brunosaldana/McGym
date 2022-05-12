@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-const tareaSchema = new Schema(
+const vistatareaSchema = new Schema(
   {
     namemon : {type: String, required: true},
     nametec : {type: String, required: true},
@@ -17,4 +17,4 @@ const tareaSchema = new Schema(
   }  
 ); 
     
-module.exports = mongoose.model("Tarea", tareaSchema);    
+module.exports = mongoose.model("vistaTarea", vistatareaSchema);    

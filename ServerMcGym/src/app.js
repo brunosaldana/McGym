@@ -16,6 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(require("./routes/mcgym.routes"));
 app.use(require("./routes/cliente.routes"));
 app.use(require("./routes/tarea.routes"));
+app.use(require("./routes/vistatarea.routes"));
 app.use(require("./routes/login.routes"));
 app.use(require("./routes/actividad.routes"));
 app.use(require("./routes/misActividades.routes"));
