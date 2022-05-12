@@ -2,10 +2,6 @@ const Monitor = require("../models/monitores");
 
 const monitor = {};
 
-monitor.getMonitores = async (req, res, next) => {
-  const monitores = await Monitor.find();
-  res.json(monitores);
-};
 
 monitor.createMonitor = async (req, res, next) => {
   const monitor = new Monitor({

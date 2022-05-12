@@ -35,4 +35,8 @@ export class TecnicosService {
     return this.http.post(this.URL_API,tecnico);   
 }
 
+
+deleteTecnico(email: string){
+  return this.http.delete(`${this.URL_API}/${email}`)
+}
 }

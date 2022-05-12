@@ -17,5 +17,10 @@ tecnico.createTecnico = async (req, res, next) => {
   res.json({ status: "Tecnico created" });
 };
 
+tecnico.deleteTecnico= async (req, res, next) => {
+  await Tecnico.findOneAndRemove({email: req.params.email}); 
+  res.json({ status: "Tecnico Deleted" });
+};
+
 
 module.exports = tecnico;

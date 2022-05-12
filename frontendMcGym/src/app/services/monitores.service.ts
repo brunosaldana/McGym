@@ -29,12 +29,7 @@ export class MonitoresService {
 
    }
 
-   getMonitores(){
-    return this.http.get<Tipoempl[]>(this.URL_API);
-    
-  }
 
-  
 
   createMonitor(monitor: Tipoempl){
       

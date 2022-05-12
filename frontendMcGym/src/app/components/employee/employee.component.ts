@@ -43,15 +43,6 @@ export class EmployeeComponent implements OnInit {
     )
   }
 
-  getMonitores(){
-    this.MonitoresService.getMonitores().subscribe(
-     res => {
-       this.MonitoresService.monitores = res;
-
-     },
-     err => console.log(err)
-   )
- }
 
   addEmployee(form: NgForm){
     if(form.value._id) {
@@ -103,12 +94,20 @@ export class EmployeeComponent implements OnInit {
       );
 
       
-
+// borrar monitor si esta en la tabla
       this.MonitoresService.deleteMonitor(email).subscribe(
         (_res) => {
         },
         (err) => console.error(err)
         );
+
+
+//borrar tecnico si esta en la tabla 
+        this.TecnicosServices.deleteTecnico(email).subscribe(
+          (_res) => {
+          },
+          (err) => console.error(err)
+          );
 
 
     }
