@@ -20,7 +20,7 @@
             </div>
             <div class="links">
                 <a href=""><i class="fa-solid fa fa-cart-arrow-down"></i></a>
-                <a href=""><i class="fa-solid fa fa-user"></i></a>
+                <!-- <a href=""><i class="fa-solid fa fa-user"></i></a> -->
                 <a href="" (click)="salir()"><i class="fa-solid fa fa-arrow-right"></i></a>            
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <a class="btn btn-primary" href="/main" role="button">Horario McGym</a>
                 </div>
                 <div class="col-3 bar">
-                    <a class="btn btn-primary" href="/reserva" role="button">Reservar Actividades</a>
+                    <a class="btn btn-primary" href="/reserva" role="button">Reservar</a>
                 </div>
                 <div class="col-3 bar">
                     <a class="btn btn-primary" href="/misActividades" role="button">Mis Actividades</a>  
@@ -42,43 +42,43 @@
             </div>
         </div>
         <div class="fondo">
-        <h2 class="text-center">Avtividades Disponibles</h2>
-    <div class = "col-md-19">
-        <table class="col-10">
-            <thead>
-                <tr> 
-                    <th>
-                        <h3 class="color">Nombre de la Actividad</h3>
-                    </th>
-                    <th>
-                        <h3 class="color">Monitor</h3>
-                    </th>
-                    <th>
-                        <h3 class="color">Dia</h3>
-                    </th>
-                    <th>
-                        <h3 class="color">Hora</h3>
-                    </th>
-                    <th>
-                        <h3 class="color">Duracion</h3>
-                    </th>
-                </tr>
-            </thead>
-            <br><br>
-            <tbody>
-                <tr *ngFor ="let misActividades of misActividadesService.misActividades">
-                    <td><p>{{ misActividades.name }}</p></td>
-                    <td><p>{{ misActividades.impartemon}}</p></td>
-                    <td><p>{{ misActividades.dia}}</p></td>
-                    <td><p>{{ misActividades.hora}}</p></td>
-                    <td><p>{{ misActividades.duracion }}</p></td>
-                    <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
-                </tr>
-            </tbody>
-        </table>
+            <h2 class="text-center">Avtividades Disponibles</h2>
+            <div class = "col-md-19">
+                <table class="col-10">
+                    <thead>
+                        <tr> 
+                            <th>
+                                <h3 class="color">Nombre de la Actividad</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">Monitor</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">Dia</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">Hora</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">Duracion</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <br><br>
+                    <tbody>
+                        <tr *ngFor ="let misActividades of misActividadesService.misActividades">
+                            <td><p>{{ misActividades.name }}</p></td>
+                            <td><p>{{ misActividades.impartemon}}</p></td>
+                            <td><p>{{ misActividades.dia}}</p></td>
+                            <td><p>{{ misActividades.hora}}</p></td>
+                            <td><p>{{ misActividades.duracion }}</p></td>
+                            <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
-    </div>
-</div>
 </body>
 
 </html>

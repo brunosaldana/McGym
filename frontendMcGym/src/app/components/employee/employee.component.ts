@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
+import { MonitoresService } from 'src/app/services/monitores.service';
 import { NgForm } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 
@@ -12,7 +13,7 @@ import { Employee } from 'src/app/models/employee';
 })
 export class EmployeeComponent implements OnInit {
   
-  constructor(public employeeService: EmployeeService) {    
+  constructor(public employeeService: EmployeeService,public MonitoresService: MonitoresService) {    
     
   }
 
@@ -60,6 +61,18 @@ export class EmployeeComponent implements OnInit {
         err => console.log(err)
       
     );
+
+    if(form.value.ocupacion=="Monitor"){  
+      console.log("monitor")
+      this.MonitoresService.createMonitor(form.value).subscribe(
+        _res => {
+        },
+        err => console.log(err)
+      
+    );
+    }else{
+      console.log("Tecnico")
+    }
     }
   }
 

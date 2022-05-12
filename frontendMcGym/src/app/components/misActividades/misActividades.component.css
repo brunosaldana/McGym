@@ -2,9 +2,8 @@
 body {
   background: rgb(235, 61, 61);
 }
-.fondo{
+.fondo {
   background-color: rgb(255, 190, 190);
-  
 }
 
 .user {
@@ -34,9 +33,9 @@ body {
 .fa-solid {
   font-size: 2vw;
 }
+
 h2 {
   width: 100%;
-  color: white;
 }
 .title {
   width: 100%;
@@ -45,11 +44,8 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
-i {
-  color: rgba(0, 0, 0, 0.774);
-}
-
 /* heder */
 
 /* bar */
@@ -62,7 +58,29 @@ a {
   align-items: center;
   height: 2vw;
   color: rgb(0, 0, 0);
-  font-size: 1vw;
 }
 
 /* bar */
+
+i {
+  color: rgba(0, 0, 0, 0.774);
+}
+
+/* body */
+td,
+tr,
+th,
+p {
+  font-weight: bold;
+}
+
+p {
+  color: black;
+  font-size: 1vw;
+}
+
+/* body */
+
+a:hover {
+  letter-spacing: 1px;
+}

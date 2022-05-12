@@ -3,6 +3,10 @@ body {
   background: rgb(235, 61, 61);
 }
 
+.fondo {
+  background-color: rgb(255, 190, 190);
+}
+
 .user {
   display: flex;
   flex-direction: row;
@@ -32,9 +36,9 @@ body {
 }
 h2 {
   width: 100%;
-  color: white;
 }
 .title {
+  color: white;
   width: 100%;
   margin-top: 2%;
   margin-left: 17vw;
@@ -68,7 +72,6 @@ td,
 tr,
 th,
 p {
-  color: antiquewhite;
   font-weight: bold;
 }
 
@@ -78,3 +81,7 @@ p {
 }
 
 /* body */
+
+a:hover {
+  letter-spacing: 1px;
+}

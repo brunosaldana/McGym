@@ -17,7 +17,6 @@ export class Forgot1Component implements OnInit {
 
 
   reset1(_form: NgForm){
-
-
+    
   }
 }
