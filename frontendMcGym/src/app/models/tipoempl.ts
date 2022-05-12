@@ -1,4 +1,4 @@
-export interface Monitor {
+export interface Tipoempl {
     _id: string
     name: string
     apellido: string

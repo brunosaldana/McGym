@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { MonitoresService } from 'src/app/services/monitores.service';
+import { TecnicosService } from 'src/app/services/tecnicos.service';
 import { NgForm } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 
@@ -13,7 +14,7 @@ import { Employee } from 'src/app/models/employee';
 })
 export class EmployeeComponent implements OnInit {
   
-  constructor(public employeeService: EmployeeService,public MonitoresService: MonitoresService) {    
+  constructor(public employeeService: EmployeeService,public MonitoresService: MonitoresService,public TecnicosServices: TecnicosService) {    
     
   }
 
@@ -41,6 +42,16 @@ export class EmployeeComponent implements OnInit {
       err => console.log(err)
     )
   }
+
+  getMonitores(){
+    this.MonitoresService.getMonitores().subscribe(
+     res => {
+       this.MonitoresService.monitores = res;
+
+     },
+     err => console.log(err)
+   )
+ }
 
   addEmployee(form: NgForm){
     if(form.value._id) {
@@ -70,13 +81,19 @@ export class EmployeeComponent implements OnInit {
         err => console.log(err)
       
     );
-    }else{
+    }else if(form.value.ocupacion=="Tecnico"){
       console.log("Tecnico")
+      this.TecnicosServices.createTecnico(form.value).subscribe(
+        _res => {
+        },
+        err => console.log(err)
+      
+    );
     }
     }
   }
 
-  deleteEmployee(id: string){
+  deleteEmployee(id: string,email:string){
     if(confirm('Seguro? ')){
       this.employeeService.deleteEmployee(id).subscribe(
       (_res) => {
@@ -84,6 +101,16 @@ export class EmployeeComponent implements OnInit {
       },
       (err) => console.error(err)
       );
+
+      
+
+      this.MonitoresService.deleteMonitor(email).subscribe(
+        (_res) => {
+        },
+        (err) => console.error(err)
+        );
+
+
     }
   }
   editEmployee(employee: Employee){
