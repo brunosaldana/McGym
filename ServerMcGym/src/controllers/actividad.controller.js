@@ -10,11 +10,7 @@ actividad.getActividades = async (req, res, next) => {
 };
 
 actividad.createActividad = async (req, res, next) => {
-  var result = await getActividadmail(req)
-  if(result){
-    res.send(true) 
- 
-  } else {
+
     const actividad = new Actividad({
       name: req.body.name, 
       impartemon: req.body.impartemon, 
@@ -25,7 +21,7 @@ actividad.createActividad = async (req, res, next) => {
     await actividad.save();
     res.json({ status: "actividad created" });
 
-  }
+  
 }; 
 
 

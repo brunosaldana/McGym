@@ -1,6 +1,12 @@
+html,
+body {
+  min-height: 100vh;
+}
 /* heder */
 body {
   background: rgb(235, 61, 61);
+  display: flex;
+  align-items: flex-end;
 }
 
 .user {
@@ -42,9 +48,9 @@ h2 {
   justify-content: center;
   align-items: center;
 }
-i {
+/* i {
   color: rgba(0, 0, 0, 0.774);
-}
+} */
 
 /* heder */
 
@@ -52,7 +58,7 @@ i {
 .bar {
   padding: 1vw;
 }
-a {
+.redirects {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +79,24 @@ a {
   padding: 1%;
 }
 /* body */
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+}
+
+i {
+  color: #2196f3;
+}
 
 @media only screen and (max-width: 600px) {
   html {

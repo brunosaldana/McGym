@@ -1,3 +1,14 @@
+html {
+  min-height: 100vh;
+}
+
+.footer-principal {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  min-height: 10vw;
+}
+
 /* heder */
 body {
   background: rgb(235, 61, 61);
@@ -57,7 +68,7 @@ i {
   padding: 1vw;
 }
 
-a {
+.redirects {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -84,4 +95,22 @@ p {
 
 a:hover {
   letter-spacing: 1px;
+}
+
+/* footer */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  margin: 1vw;
+}
+
+i {
+  color: #2196f3;
 }
