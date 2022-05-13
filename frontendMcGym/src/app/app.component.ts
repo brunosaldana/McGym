@@ -4,7 +4,8 @@ import { ClienteComponent } from './components/cliente/cliente.component';
 import { DynamicComponentDirective } from './directives/dynamic-component.directives';
 import { Component } from '@angular/core';
 import { TareaComponent } from './components/tareas/tareas.component';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -40,4 +41,6 @@ export class AppComponent implements AfterViewInit{
 
       const componentRef = viewContainerRef.createComponent<any>(TareaComponent);
     }
+    
 }
+

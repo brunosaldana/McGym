@@ -1,6 +1,6 @@
-import { HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import {  NgForm } from '@angular/forms';
+import {  FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 
 
 @Component({
@@ -9,9 +9,29 @@ import {  NgForm } from '@angular/forms';
   styleUrls: ['./forgot1.component.css']
 })
 export class Forgot1Component implements OnInit {
+  title = 'enviarCorreos';
 
-  constructor() { }
+  datos!: FormGroup;
 
+  constructor(private httpclient:HttpClient){
+    this.datos= new FormGroup({
+      correo: new FormControl('',[Validators.required, Validators.email]),
+      asunto: new FormControl('',[Validators.required,]),
+      mensaje: new FormControl('',[Validators.required,])
+    })
+  }
+  enviocorreo(){
+    let params = {
+      email:this.datos.value.correo,
+      asunto:this.datos.value.asunto,
+      mensaje:this.datos.value.mensaje,
+    }
+    console.log(params);
+    this.httpclient.post('http://localhost/4000/envio',params).subscribe(res=>{
+      
+    });
+
+  }
   ngOnInit(): void {
   }
 
