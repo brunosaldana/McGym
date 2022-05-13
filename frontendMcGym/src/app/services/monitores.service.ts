@@ -32,12 +32,17 @@ export class MonitoresService {
 
 
   createMonitor(monitor: Tipoempl){
-      
     return this.http.post(this.URL_API,monitor);   
   }
 
   deleteMonitor(email: string){
     return this.http.delete(`${this.URL_API}/${email}`)
+  }
+
+  putMonitor(monitores: Tipoempl) {
+    console.log("entro")
+    return this.http.put(this.URL_API + `/${monitores.email}`, monitores);
+  
   }
 
 }

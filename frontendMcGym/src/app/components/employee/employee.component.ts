@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from 'src/app/services/employee.service';
 import { MonitoresService } from 'src/app/services/monitores.service';
 import { TecnicosService } from 'src/app/services/tecnicos.service';
+import { CookieService } from 'ngx-cookie-service';
+import { EmplogService } from 'src/app/services/emplog.service';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Employee } from 'src/app/models/employee';
 
@@ -13,8 +16,10 @@ import { Employee } from 'src/app/models/employee';
   
 })
 export class EmployeeComponent implements OnInit {
+  es: any;
   
-  constructor(public employeeService: EmployeeService,public MonitoresService: MonitoresService,public TecnicosServices: TecnicosService) {    
+  constructor(private EmplogService:EmplogService,private cookieService: CookieService,public employeeService: EmployeeService,public MonitoresService: MonitoresService,
+    public TecnicosServices: TecnicosService,public router : Router) {    
     
   }
 
@@ -24,12 +29,33 @@ export class EmployeeComponent implements OnInit {
 
   }
 
-  ngOnInit(): void { 
-    this.getEmployees();
+  ngOnInit() { 
+     var cookieValue = this.cookieService.get('sesion-token')
+     var es =this.EmplogService.isEmpleado(cookieValue).subscribe(
+      res => {
+        console.log("---------")
+        console.log(res)
+        console.log("---------")
+        if(res.success){
+          console.log("Sí!!!!")
+          console.log(cookieValue+" cookie");
+          this.router.navigate(["/empleados"])
+          this.getEmployees();
+        } else {
+          console.log("Nooooooo :-(")
+          this.router.navigate(["/main"])
+        }
+      },
+      err => {
+        console.log(err)
+        console.log("404 :-(")
+        this.router.navigate(["/main"])
+    }
+     )
+
   }
 
   resetForm(_form: NgForm){
-    location.reload();
   }
 
 
@@ -113,10 +139,16 @@ export class EmployeeComponent implements OnInit {
     }
   }
   editEmployee(employee: Employee){
+    console.log("employe edit")
     this.employeeService.selectedEmployee = employee;
-
+    
   }
 
-
+  editMonitor(employee: Employee){
+    console.log("monitor edit")
+    this.MonitoresService.selectedMonitor = employee;
+  }
+  
+  
 
 }

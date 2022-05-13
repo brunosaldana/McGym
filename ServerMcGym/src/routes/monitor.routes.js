@@ -8,6 +8,9 @@ router.post("/monitor", monitor.createMonitor);
 
 router.delete("/monitor/:email", monitor.deleteMonitor);   
 
+router.put("/monitor/:email", monitor.editMonitor); 
+
+
 
 
 

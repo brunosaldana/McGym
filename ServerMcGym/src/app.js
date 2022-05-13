@@ -22,6 +22,7 @@ app.use(require("./routes/vistatarea.routes"));
 app.use(require("./routes/login.routes"));
 app.use(require("./routes/actividad.routes"));
 app.use(require("./routes/misActividades.routes"));
+app.use(require("./routes/emplog.routes"));
 
 
 module.exports = app;

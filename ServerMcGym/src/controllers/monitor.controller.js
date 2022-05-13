@@ -23,4 +23,9 @@ monitor.deleteMonitor= async (req, res, next) => {
   res.json({ status: "Monitor Deleted" });
 };
 
+monitor.editMonitor = async (req, res, next) => {
+  await Monitor.findOneAndUpdate({email: req.params.email});
+  res.json({ status: "Monitor Updated" });
+};
+
 module.exports = monitor;
