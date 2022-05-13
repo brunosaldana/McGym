@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Monitor } from '../models/monitor';
+import { Tipoempl } from '../models/tipoempl';
 import {HttpClient} from '@angular/common/http';
 
 
@@ -11,7 +11,7 @@ export class MonitoresService {
 
   URL_API = 'http://localhost:4000/monitor';
 
-  selectedMonitor: Monitor = {
+  selectedMonitor: Tipoempl = {
     _id: '',
     name: '',
     apellido: '',
@@ -22,16 +22,27 @@ export class MonitoresService {
     password: ''
   };
 
-  monitores: Monitor[] = [];
+  monitores: Tipoempl[] = [];
   controls: any;
 
   constructor(private http: HttpClient) {
 
    }
 
-  createMonitor(monitor: Monitor){
-      
+
+
+  createMonitor(monitor: Tipoempl){
     return this.http.post(this.URL_API,monitor);   
-}
+  }
+
+  deleteMonitor(email: string){
+    return this.http.delete(`${this.URL_API}/${email}`)
+  }
+
+  putMonitor(monitores: Tipoempl) {
+    console.log("entro")
+    return this.http.put(this.URL_API + `/${monitores.email}`, monitores);
+  
+  }
 
 }

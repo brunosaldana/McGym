@@ -1,4 +1,6 @@
 const Cliente = require("../models/clientes");
+const empleados = require("../models/empleados");
+
 
 const login = {};
 
@@ -7,17 +9,26 @@ login.getsLogin = async (req, res) => {
     const userExists = await Cliente.findOne({
       email: req.body.email,
       password: req.body.password,
-    });
+    })
+    const empExist = await empleados.findOne({
+      email: req.body.email,
+      password: req.body.password,
+    })
+
     if (userExists) {
       res.json(userExists);
       console.log("user exists");
-    } else {
+    } else if(empExist){
+      res.json(empExist);
+      console.log("user exists");
+    }else {
       res.status(401).send(false);
     }
   } catch {
     console.log(error);
   }
 };
+
 
 login.getsId = async (req, res) => {
   try {
@@ -32,5 +43,6 @@ login.getsId = async (req, res) => {
     console.log(error);
   }
 };
+
 
 module.exports = login;

@@ -53,10 +53,8 @@ export class InicioComponent implements OnInit {
         console.log(e)
         e = res
         const cook = this.cookie(e._id);
-        if (this.cookieService.get('sesion-token')&& this.LoginService.idExists(e.id)){
+        if (this.LoginService.idExists(e.id)){
           this.router.navigate(["/main"])
-          console.log(this.LoginService.idExists(e.id))
-
         } else { 
           this.router.navigate([""])
         }
