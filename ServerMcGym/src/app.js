@@ -6,13 +6,17 @@ const app = express();
 // Settings
 app.set("port", process.env.PORT || 4000);
 
+
 // Middlewares
 app.use(cors()); 
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+
+
 // Routes
+app.use(require("./routes/correo.routes"));
 app.use(require("./routes/mcgym.routes"));
 app.use(require("./routes/cliente.routes"));
 app.use(require("./routes/monitor.routes"));

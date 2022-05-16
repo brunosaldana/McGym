@@ -21,12 +21,12 @@
     </div>
 <div class="container principal">
     <div class="recu">
-        <form #reset1Form = "ngForm" (ngSubmit)="reset1(reset1Form)">
+        <form  #reset1Form = "ngForm" (ngSubmit)="reset1(reset1Form)">
             <div class="form-group">
                 <h1>Ayuda de contraseña</h1>
                 <p>Introduzca la dirección de correo electrónico asociados con su cuenta de McGym para proceder con el cambio.</p>
                 <label for="exampleInputEmail1">Email</label>
-                <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input  #_email="ngModel" [(ngModel)]="EmailService.selectedEmail.email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">Te enviaremos un email para cambiar la contraseña</small>
             </div>
             <button type="submit" class="btn btn-primary">Mandame el email!</button>
