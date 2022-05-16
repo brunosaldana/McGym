@@ -1,7 +1,4 @@
-html,
-body {
-  min-height: 100vh;
-}
+
 /* heder */
 body {
   background: rgb(235, 61, 61);
@@ -10,6 +7,8 @@ body {
 }
 
 .user {
+  width: 99vw;
+
   display: flex;
   flex-direction: row;
   background-color: rgb(164, 43, 43, 64);
