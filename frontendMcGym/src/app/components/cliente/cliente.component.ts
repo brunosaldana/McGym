@@ -4,6 +4,8 @@ import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/clientes.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { EmplogService } from 'src/app/services/emplog.service';
+
 
 
 
@@ -15,7 +17,7 @@ import { Router } from '@angular/router';
 })
 export class ClienteComponent implements OnInit {
 
-  constructor(public clienteService: ClienteService,private cookieService: CookieService, public router : Router) {    
+  constructor(private EmplogService:EmplogService,public clienteService: ClienteService,private cookieService: CookieService, public router : Router) {    
     
   }
   validation(_form: NgForm){
@@ -24,14 +26,28 @@ export class ClienteComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    // if (this.cookieService.get('sesion-token')){
-    //   this.router.navigate(["/main"])
-
-
-    // } else { 
-    //   this.router.navigate([""])
-    // }
-    this.getClientes();
+    var cookieValue = this.cookieService.get("email-token")
+    this.EmplogService.isEmpleado(cookieValue).subscribe(
+      res => {
+        console.log("---------")
+        console.log(res)
+        console.log("---------")  
+        if(res){
+          console.log("Sí!!!!")
+          console.log(cookieValue+" cookie");
+          this.router.navigate(["/clientes"])
+          this.getClientes();
+        } else {
+          console.log("Nooooooo :-(")
+          this.router.navigate(["/main"])
+        }
+      },
+      err => {
+        console.log(err)
+        console.log("404 :-(")
+        this.router.navigate(["/main"])
+    }
+     )
 
   }
 

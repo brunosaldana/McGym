@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, NgForm } from '@angular/forms';
 import { Actividad } from 'src/app/models/actividad';
 import { ActividadesService } from 'src/app/services/actividades.service';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { EmplogService } from 'src/app/services/emplog.service';
+
+
 
 @Component({
   selector: 'app-actividades',
@@ -10,7 +15,7 @@ import { ActividadesService } from 'src/app/services/actividades.service';
 })
 export class ActividadesComponent implements OnInit {
 
-  constructor(public actividadesService:ActividadesService) {    
+  constructor(public actividadesService:ActividadesService,private EmplogService:EmplogService,private cookieService: CookieService, public router : Router) {    
     
   }
   validation(_form: NgForm){
@@ -18,8 +23,29 @@ export class ActividadesComponent implements OnInit {
 
   }
 
-  ngOnInit(): void { 
-    this.getActividades();
+  ngOnInit(): void {
+    var cookieValue = this.cookieService.get("email-token")
+    this.EmplogService.isMonitor(cookieValue).subscribe(
+      res => {
+        console.log("---------")
+        console.log(res)
+        console.log("---------")  
+        if(res){
+          console.log("Sí!!!!")
+          console.log(cookieValue+" cookie");
+          this.router.navigate(["/actividades"])
+          this.getActividades();
+        } else {
+          console.log("Nooooooo :-(")
+          this.router.navigate(["/main"])
+        }
+      },
+      err => {
+        console.log(err)
+        console.log("404 :-(")
+        this.router.navigate(["/main"])
+    }
+     )
   }
 
   resetForm(_form: NgForm){

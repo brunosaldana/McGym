@@ -11,8 +11,21 @@ export class EmplogService {
 
   constructor(private http: HttpClient) { }
 
-  isEmpleado(user:string){
+  isEmpleado(token:string){
     console.log("es empleado?")
-    return this.http.post<Result>(this.URL + '/emp', user)
+    console.log(token)
+    return this.http.post(this.URL + '/emp/' + token, token)
+  }
+
+  isMonitor(token:string){
+    console.log("es monitor?")
+    console.log(token)
+    return this.http.post(this.URL + '/mon/' + token, token)
+  }
+
+  isTecnico(token:string){
+    console.log("es tecnico?")
+    console.log(token)
+    return this.http.post(this.URL + '/tec/' + token, token)
   }
 }

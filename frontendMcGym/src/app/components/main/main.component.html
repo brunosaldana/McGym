@@ -39,6 +39,35 @@
                     <div class="col-3 bar">
                         <a class="btn btn-primary redirects" href="#" role="button">Tienda</a>  
                     </div>
+
+                    <div class="col-3 bar" *ngIf="mon==true" >
+                        <a class="btn btn-primary redirects" href="/actividades" role="button">Actividades</a>  
+                     </div>
+
+
+
+                     <!-- Segun el rol tendran acceso a estos diferentes botones -->
+                     <div class="col-3 bar" *ngIf="mon==true||tec==true">
+                        <a class="btn btn-primary redirects" href="/clientes" role="button">Clientes</a>  
+                     </div>
+
+                     <div class="col-3 bar" *ngIf="mon==true||tec==true">
+                        <a class="btn btn-primary redirects" href="/vistatareas" role="button">Lista tareas</a>  
+                     </div>
+
+                     <div class="col-3 bar" *ngIf="mon==true" >
+                        <a class="btn btn-primary redirects" href="/tareas" role="button">Crear Tarea</a>  
+                     </div>
+
+                     <div class="col-3 bar" *ngIf="mon==true" >
+                        <a class="btn btn-primary redirects" href="/empleados" role="button">Empleados</a>  
+                     </div>
+
+                     <div class="col-3 bar" *ngIf="mon==true" >
+                        <a class="btn btn-primary redirects" href="/actividades" role="button">Crear actividad</a>  
+                     </div>
+
+
                 </div>
             </div>
 

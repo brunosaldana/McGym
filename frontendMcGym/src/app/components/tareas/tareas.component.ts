@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Tarea } from 'src/app/models/tareas';
 import { TareaService } from 'src/app/services/tareas.service';
+import { EmplogService } from 'src/app/services/emplog.service';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+
+
+
 
 
 @Component({
@@ -12,7 +18,7 @@ import { TareaService } from 'src/app/services/tareas.service';
 
 export class TareaComponent implements OnInit {
 
-  constructor(public tareaService: TareaService) {    
+  constructor(public tareaService: TareaService,private EmplogService:EmplogService,private cookieService: CookieService, public router : Router) {    
     
   }
   validation(_form: NgForm){
@@ -21,7 +27,29 @@ export class TareaComponent implements OnInit {
   }
 
   ngOnInit(): void { 
-    this.getTareas();
+    var cookieValue = this.cookieService.get("email-token")
+    this.EmplogService.isMonitor(cookieValue).subscribe(
+      res => {
+        console.log("---------")
+        console.log(res)
+        console.log("---------")  
+        if(res){
+          console.log("Sí!!!!")
+          console.log(cookieValue+" cookie");
+          this.router.navigate(["/tareas"])
+          this.getTareas();
+      
+        } else {
+          console.log("Nooooooo :-(")
+          this.router.navigate(["/main"])
+        }
+      },
+      err => {
+        console.log(err)
+        console.log("404 :-(")
+        this.router.navigate(["/main"])
+    }
+     )
   }
 
   resetForm(_form: NgForm){

@@ -34,8 +34,9 @@ export class InicioComponent implements OnInit {
 
   }
 
-  cookie(id: string){
+  cookie(id: string,email: string){
     this.cookieService.set('sesion-token', id);
+    this.cookieService.set('email-token', email);
     this.cookieValue = this.cookieService.get('sesion-token')
   }
 
@@ -52,7 +53,7 @@ export class InicioComponent implements OnInit {
         console.log("e")
         console.log(e)
         e = res
-        const cook = this.cookie(e._id);
+        const cook = this.cookie(e._id,e.email);
         if (this.LoginService.idExists(e.id)){
           this.router.navigate(["/main"])
         } else { 

@@ -30,13 +30,13 @@ export class EmployeeComponent implements OnInit {
   }
 
   ngOnInit() { 
-     var cookieValue = this.cookieService.get('sesion-token')
-     var es =this.EmplogService.isEmpleado(cookieValue).subscribe(
+     var cookieValue = this.cookieService.get('email-token')
+     var es =this.EmplogService.isMonitor(cookieValue).subscribe(
       res => {
         console.log("---------")
         console.log(res)
-        console.log("---------")
-        if(res.success){
+        console.log("---------")  
+        if(res){
           console.log("Sí!!!!")
           console.log(cookieValue+" cookie");
           this.router.navigate(["/empleados"])
