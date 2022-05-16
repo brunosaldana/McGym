@@ -1,7 +1,8 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import {  FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
-
+import { EmailService } from 'src/app/services/email.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-forgot1',
@@ -13,30 +14,28 @@ export class Forgot1Component implements OnInit {
 
   datos!: FormGroup;
 
-  constructor(private httpclient:HttpClient){
+  constructor(private httpclient:HttpClient, public EmailService:EmailService, public CookieService: CookieService){
+   
     this.datos= new FormGroup({
-      correo: new FormControl('',[Validators.required, Validators.email]),
-      asunto: new FormControl('',[Validators.required,]),
-      mensaje: new FormControl('',[Validators.required,])
+      correo: new FormControl([Validators.required, Validators.email]),
+
     })
   }
-  enviocorreo(){
-    let params = {
-      email:this.datos.value.correo,
-      asunto:this.datos.value.asunto,
-      mensaje:this.datos.value.mensaje,
-    }
-    console.log(params);
-    this.httpclient.post('http://localhost/4000/envio',params).subscribe(res=>{
-      
-    });
 
-  }
   ngOnInit(): void {
   }
-
-
+  
   reset1(_form: NgForm){
+    //this.CookieService.set('email', _form.value.email)
+    this.EmailService.envioCorreo({email: _form.value.email}).subscribe(res =>{ 
+
+      var u = JSON.stringify(res);
+      var e = JSON.parse(u)
+      console.log(e , " E parse mail")
+    })
+
+    //funcion  genera -> safdajsdvau121653712
     
-  }
+  } 
 }
+

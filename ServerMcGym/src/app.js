@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 
+
 // Routes
 app.use(require("./routes/correo.routes"));
 app.use(require("./routes/mcgym.routes"));

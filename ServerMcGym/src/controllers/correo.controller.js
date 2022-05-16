@@ -1,5 +1,6 @@
 const {request, response} = require ('express');
 const nodeMailer = require('nodemailer');
+const enlace = "http://localhost:4200/forgot2";
 
 const envioCorreo = (req=request,res=response) =>{
     let body = req.body;
@@ -14,15 +15,15 @@ const envioCorreo = (req=request,res=response) =>{
         }
     });
 
-
     const opciones = {
         from: 'Mcgym',
-        subject: body.asunto,
+        subject: "Email de recuperación de contraseña McGym. ",
         to: body.email,
-        text: body.mensaje
+        text: "Estimado cliente. " +
+        "Hemos recibido un correo en el que sugiere un cambio de contraseña. " +
+        " En este enlace podrás hacerlo: " + enlace
 
     };
-
     config.sendMail(opciones,function(error,result){
         if (error) return res.json({ok:false,msg:error});
 
@@ -31,9 +32,12 @@ const envioCorreo = (req=request,res=response) =>{
             msg:result
         })
     })
-
 }
 
 module.exports={
     envioCorreo
 }
+
+
+
+
