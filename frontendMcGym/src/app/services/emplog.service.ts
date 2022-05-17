@@ -28,4 +28,10 @@ export class EmplogService {
     console.log(token)
     return this.http.post(this.URL + '/tec/' + token, token)
   }
+
+  isCliente(token:string){
+    console.log("es cliente?")
+    console.log(token)
+    return this.http.post(this.URL + '/cli/' + token, token)
+  }
 }

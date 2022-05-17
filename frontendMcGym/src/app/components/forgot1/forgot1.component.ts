@@ -54,17 +54,28 @@ export class Forgot1Component implements OnInit {
       err => {
         console.log(err)
     }
-     )
-
-    
-    
-    
-
-
-
-
-
-    
+    )
+    this.EmplogService.isCliente(cookieValue2).subscribe(
+      res => {
+        console.log("---------")
+        console.log(res)
+        console.log("---------")  
+        if(res){
+          this.acceso = true
+          this.EmailService.envioCorreo({email: _form.value.email}).subscribe(res =>{ 
+            var u = JSON.stringify(res);
+            var e = JSON.parse(u)
+            console.log(e , " E parse mail")
+          })
+        } else {
+          console.log("nooo")
+          this.acceso = false
+        }
+      },
+      err => {
+        console.log(err)
+    }
+    )    
   } 
 }
 
