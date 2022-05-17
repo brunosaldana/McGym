@@ -10,8 +10,8 @@ const envioCorreo = (req=request,res=response) =>{
         host: 'smtp.gmail.com',
         port: '587',
         auth:{
-            user:'brsase@fp.insjoaquimmir.cat',
-            pass: 'mati1234'
+            user:'fit.mcgym@gmail.com',
+            pass: 'Hola1234'
         }
     });
 
