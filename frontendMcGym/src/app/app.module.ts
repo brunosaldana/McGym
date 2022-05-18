@@ -22,6 +22,7 @@ import { misActividadesComponent } from './components/misActividades/misActivida
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { TiendaComponent } from './components/tienda/tienda.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TermsConditionsComponent } from './components/terms-conditions/terms-co
     PageNotFoundComponent,
     VistatareasComponent,
     TermsConditionsComponent,
+    TiendaComponent,
   ],
   imports: [
     BrowserModule,
@@ -75,6 +77,8 @@ import { TermsConditionsComponent } from './components/terms-conditions/terms-co
       ActividadesComponent},
       {path: 'terminos_condiciones', component:
       TermsConditionsComponent},
+      {path: 'tienda', component:
+      TiendaComponent},
       {path: '**', component:
       PageNotFoundComponent},
     ])

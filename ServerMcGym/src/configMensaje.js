@@ -7,8 +7,8 @@ module.exports = (formulario) => {
  var transporter = nodemailer.createTransport({
  service: gmail,
  auth: {
- user: 'brsase@fp.insjoaquimmir.cat',
- pass: 'mati1234'
+    user:'Fit.mcgym@gmail.com',
+    pass: 'Hola1234'
  }
  });
 
