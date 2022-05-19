@@ -65,7 +65,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
       ClienteComponent},
       {path: 'forgot1', component:
       Forgot1Component},
-      {path: 'forgot2', component:
+      {path: 'forgot2/:token', component:
       Forgot2Component},
       {path: 'main', component:
       MainComponent},
