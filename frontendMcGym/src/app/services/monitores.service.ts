@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Tipoempl } from '../models/tipoempl';
 import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 })
 export class MonitoresService {
 
-  URL_API = 'http://localhost:4000/monitor';
+  URL_API = environment.api + '/monitor';
 
   selectedMonitor: Tipoempl = {
     _id: '',

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Actividad} from '../models/actividad'
 import {HttpClient} from '@angular/common/http';
-
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,7 @@ import {HttpClient} from '@angular/common/http';
 export class ActividadesService {
   [x: string]: any;
 
-  URL_API = 'http://localhost:4000/Actividades';
+  URL_API = environment.api + '/Actividades';
 
   selectedActividad: Actividad = {
     _id: '',

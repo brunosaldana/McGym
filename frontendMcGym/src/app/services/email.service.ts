@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Email } from '../models/email';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmailService {
-  URL_API = 'http://localhost:4000/envio';
+  URL_API = environment.api + '/envio/';
 
   selectedEmail: Email = {
       email: ''
@@ -20,7 +21,6 @@ export class EmailService {
   constructor(private http: HttpClient) {}
 
   envioCorreo(envio: Email){
-      console.log(envio + " hesste es el hemail") 
     return this.http.post(this.URL_API, envio);   
 }
 

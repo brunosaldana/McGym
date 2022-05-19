@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Employee } from '../models/employee';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -10,7 +11,7 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
   
-  URL_API = 'http://localhost:4000/Empleados';
+  URL_API = environment.api + '/Empleados';
 
   selectedEmployee: Employee = {
       _id: '',

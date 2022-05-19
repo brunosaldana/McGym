@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {MisActividades} from '../models/mis-actividades'
 import { CookieService } from 'ngx-cookie-service';
 import { Actividad } from '../models/actividad';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -12,7 +13,7 @@ import { Actividad } from '../models/actividad';
 export class MisActividadesService {
   [x: string]: any;
 
-  URL_API = 'http://localhost:4000/misActividades';
+  URL_API = environment.api + '/misActividades';
 
   selectedMisActividades: MisActividades = {
     _id: '',
