@@ -1,13 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment.prod';
 import { MapService } from '../../../app/@core/services/map.service';
-import { AbstractControl, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { Cliente } from 'src/app/models/cliente';
 import { ClienteService } from 'src/app/services/clientes.service';
-
 
 
 @Component({

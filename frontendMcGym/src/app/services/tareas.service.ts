@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Tarea } from '../models/tareas';
 import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import {HttpClient} from '@angular/common/http';
 export class TareaService {
   [x: string]: any;
 
-  URL_API = 'http://localhost:4000/Tareas';
+  URL_API = environment.api + '/Tareas';
 
   selectedTarea: Tarea = {
     _id: '',

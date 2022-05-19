@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { Cliente } from '../models/cliente';
+import { environment } from 'src/environments/environment.prod';
 
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Cliente } from '../models/cliente';
 export class ClienteService {
   [x: string]: any;
   
-  URL_API = 'http://localhost:4000/Clientes';
+  URL_API = environment.api + '/Clientes';
 
   selectedCliente: Cliente = {
       _id: '',

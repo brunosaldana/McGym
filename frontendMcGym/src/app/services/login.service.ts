@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  private URL = 'http://localhost:4000'
+  private URL = environment.api
 
   constructor(private http: HttpClient) { }
 

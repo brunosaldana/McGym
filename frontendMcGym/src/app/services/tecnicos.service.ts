@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Tipoempl } from '../models/tipoempl';
 import {HttpClient} from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 
 
@@ -10,7 +11,7 @@ import {HttpClient} from '@angular/common/http';
 export class TecnicosService {
 
 
-  URL_API = 'http://localhost:4000/tecnico';
+  URL_API = environment.api + '/tecnico';
 
   selectedTecnico: Tipoempl = {
     _id: '',
