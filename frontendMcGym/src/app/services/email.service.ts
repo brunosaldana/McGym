@@ -7,7 +7,7 @@ import { Email } from '../models/email';
   providedIn: 'root'
 })
 export class EmailService {
-  URL_API = 'http://localhost:4000/envio/';
+  URL_API = 'http://localhost:4000/envio';
 
   selectedEmail: Email = {
       email: ''
