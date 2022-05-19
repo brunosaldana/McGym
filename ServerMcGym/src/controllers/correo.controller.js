@@ -1,6 +1,6 @@
 const { request, response } = require("express");
 const nodeMailer = require("nodemailer");
-const enlace = "http://localhost:4200/forgot2/";
+const enlace = "http://157.90.225.116:4200/forgot2/";
 var jwt = require("jsonwebtoken");
 const Token = require("../models/token");
 const token = {};
