@@ -29,6 +29,11 @@ export class Forgot1Component implements OnInit {
 
   ngOnInit(): void {
   }
+
+  resetForm(_form: NgForm){
+    location.reload();
+  }
+
   
   reset1(_form: NgForm){
     //this.CookieService.set('email', _form.value.email)
