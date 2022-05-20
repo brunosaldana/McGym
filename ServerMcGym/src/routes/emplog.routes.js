@@ -9,6 +9,11 @@ router.post("/mon/:email", empLogin.isMonitor);
 router.post("/tec/:email", empLogin.isTecnico);
 router.post("/cli/:email", empLogin.isCliente);
 
+router.get("/:email/:password", empLogin.resPass);
+ 
+
+
+
 
 
 

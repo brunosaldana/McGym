@@ -25,12 +25,26 @@ export class Forgot2Component implements OnInit {
   resforgot2(Form: NgForm){
     var email = this.CookieService.get("email")
     console.log(Form.value.password)
-    if (this.Emplog.isCliente(email)){
-      
-    }else if(this.Emplog.isEmpleado(email)){
+    var contra = (Form.value.password)
 
+
+    if (this.Emplog.isCliente(email)){
+      this.Emplog.resPasscli(email,contra).subscribe(
+        res => {
+          console.log(res)
+        },
+        err => console.log(err)
+      )
+
+    }else if(this.Emplog.isEmpleado(email)){
+      this.Emplog.resPassemp(email,contra).subscribe(
+        res => {
+          console.log(res)
+        },
+        err => console.log(err)
+      )
     }else{
-      alert("el correo almacenado para el cambio de contraseña no existe")
+      alert("Upss! el correo no pertenece a ningun cliente Mcgym")
     }
   }
 

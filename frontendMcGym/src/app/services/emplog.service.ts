@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment.prod';
 export class EmplogService {
   private URL = environment.api
 
+
   constructor(private http: HttpClient) { }
 
   isEmpleado(token:string){
@@ -34,5 +35,16 @@ export class EmplogService {
     console.log("es cliente?")
     console.log(token)
     return this.http.post(this.URL + '/cli/' + token, token)
+  }
+
+
+  resPasscli(email:string,contra:string){
+    console.log("email: "+email+" contraseña: "+contra )
+    return this.http.get(this.URL + '/' + email + '/' + contra);
+  }
+
+  resPassemp(email:string,contra:string){
+    console.log("email: "+email+" contraseña: "+contra )
+    return this.http.get(this.URL + '/' + email + '/' + contra);
   }
 }
