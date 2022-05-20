@@ -2,8 +2,8 @@ const Carrito = require("../models/carrito");
 
 const carrito = {};
 
-carrito.getCarrito = async (req, res, next) => {
-  const carritos = await Carrito.find();
+carrito.getCarritos = async (req, res, next) => {
+  const carrito = await Carrito.find();
   res.json(carrito);
 };
 
