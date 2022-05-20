@@ -1,53 +1,32 @@
-const Reserva = require("../models/misActividades");
+const Micarrito = require("../models/miCarrito");
 
-const reserva = {};
+const micarrito = {};
 
 
 
-reserva.getMisActividades = async (req, res) => {
-  const reservas = await Reserva.find({cliId: req.params.id});
-  res.json(reservas);
+micarrito.getMicarrito = async (req, res) => {
+  const micarrito = await Micarrito.find({cliId: req.params.id});
+  res.json(micarrito);
 };
 
-reserva.createMisActividad = async (req, res, next) => {
-  const reserva = new Reserva({
+micarrito.createMicarrito = async (req, res, next) => {
+  const micarrito = new Micarrito({
     name: req.body.name,
-    impartemon: req.body.impartemon,
-    dia: req.body.dia,
-    hora: req.body.hora,
-    duracion: req.body.duracion,
+    descripcion: req.body.descripcion,
+    precio: req.body.precio,
     cliId: req.params.id,
   });
-  await reserva.save();
-  res.json({ status: "reserva created" });
+  await micarrito.save();
+  res.json({ status: "micarrito created" });
 };
 
-reserva.deleteReserva= async (req, res, next) => {
-  await Reserva.findByIdAndRemove(req.params.id); 
+micarrito.deleteMicarrito= async (req, res, next) => {
+  await Micarrito.findByIdAndRemove(req.params.id); 
   res.json({ status: "reserva Deleted" });
 };
 
 
-// reserva.putReserva = async (req, res, next) => {
-//   const { id } = req.params;
-//   await Reserva.findByIdAndUpdate(id, {$set: req.body});
-//   res.json({ status: "Reserva Updated" });
-// };
-
-
-// reserva.addReserva = async (req, res, next) => {
-//     const reserva = new Actividad({
-//       name: req.body.name, 
-//       impartemon: req.body.impartemon, 
-//       dia: req.body.dia,
-//       hora: req.body.hora,
-//       duracion: req.body.duracion, 
-//     });
-//     await reserva.save();
-//     res.json({ status: "reserva created" });
-// }; 
-
-module.exports = reserva;
+module.exports = micarrito;
 
 
 

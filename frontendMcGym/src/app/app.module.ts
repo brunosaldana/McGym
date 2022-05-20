@@ -22,7 +22,7 @@ import { misActividadesComponent } from './components/misActividades/misActivida
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
-import { TiendaComponent } from './components/tienda/tienda.component';
+import { TiendaComponent } from './components/mi_carrito/tienda.component';
 import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({

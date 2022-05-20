@@ -16,7 +16,7 @@
                 <img id="logo" src="/assets/McgymLogo.png" >
             </div>
             <div class="title">
-                <h2>MIS RESERVAS</h2>
+                <h2>MI CARRITO</h2>
             </div>
             <div class="links">
                 <a href=""><i class="fa-solid fa fa-cart-arrow-down"></i></a>
@@ -37,42 +37,35 @@
                     <a class="btn btn-primary redirects" href="/misActividades" role="button">Mis Actividades</a>  
                 </div>
                 <div class="col-3 bar">
-                    <a class="btn btn-primary redirects" href="#" role="button">Tienda</a>  
+                    <a class="btn btn-primary redirects" href="/tienda" role="button">Tienda</a>  
                 </div>
             </div>
         </div>
         <div class="fondo">
-            <h2 class="text-center">Actividades Disponibles</h2>
+            <h2 class="text-center">Productos Disponibles</h2>
             <div class = "col-md-19">
                 <table class="col-10">
                     <thead>
                         <tr> 
                             <th>
-                                <h3 class="color">Nombre de la Actividad</h3>
+                                <h3 class="color">Nombre del producto</h3>
                             </th>
                             <th>
-                                <h3 class="color">Monitor</h3>
+                                <h3 class="color">Precio</h3>
                             </th>
                             <th>
-                                <h3 class="color">Dia</h3>
-                            </th>
-                            <th>
-                                <h3 class="color">Hora</h3>
-                            </th>
-                            <th>
-                                <h3 class="color">Duracion</h3>
+                                <h3 class="color">Descripcion</h3>
                             </th>
                         </tr>
                     </thead>
                     <br><br>
                     <tbody>
-                        <tr *ngFor ="let misActividades of misActividadesService.misActividades">
-                            <td><p>{{ misActividades.name }}</p></td>
-                            <td><p>{{ misActividades.impartemon}}</p></td>
-                            <td><p>{{ misActividades.dia}}</p></td>
-                            <td><p>{{ misActividades.hora}}</p></td>
-                            <td><p>{{ misActividades.duracion }}</p></td>
-                            <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
+                        <tr *ngFor ="let miCarrito of miCarritoService.miCarrito">
+                            <td><p>{{ miCarrito.name }}</p></td>
+                            <td><p>{{ miCarrito.impartemon}}</p></td>
+                            <td><p>{{ miCarrito.dia}}</p></td>
+
+                            <td type="button" (click)="deleteMiCarrito(miCarrito)" class="btn btn-primary btn-sm"> Cancelar Producto </td>
                         </tr>
                     </tbody>
                 </table>
