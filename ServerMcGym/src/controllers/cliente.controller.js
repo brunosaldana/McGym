@@ -43,7 +43,7 @@ const getClientemail = async (req, res) => {
     return false
   }
 };
-
+ 
 
 cliente.editCliente = async (req, res, next) => {
   const { id } = req.params;
