@@ -17,6 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // Routes
 app.use(require("./routes/correo.routes"));
+app.use(require("./routes/carrito.routes"));
 app.use(require("./routes/mcgym.routes"));
 app.use(require("./routes/cliente.routes"));
 app.use(require("./routes/monitor.routes"));

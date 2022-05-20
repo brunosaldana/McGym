@@ -23,6 +23,7 @@ import { ActividadesComponent } from './components/actividades/actividades.compo
 import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 import { TiendaComponent } from './components/tienda/tienda.component';
+import { CarritoComponent } from './components/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     VistatareasComponent,
     TermsConditionsComponent,
     TiendaComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     RouterModule.forRoot([
       {path: '', component:
       InicioComponent},
+      {path: 'tienda', component:
+      CarritoComponent},
       {path: 'tareas', component:
       TareaComponent},
       {path: 'vistatareas', component:
@@ -77,8 +81,6 @@ import { TiendaComponent } from './components/tienda/tienda.component';
       ActividadesComponent},
       {path: 'terminos_condiciones', component:
       TermsConditionsComponent},
-      {path: 'tienda', component:
-      TiendaComponent},
       {path: '**', component:
       PageNotFoundComponent},
     ])
