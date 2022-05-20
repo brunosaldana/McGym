@@ -95,11 +95,12 @@ a:hover {
 footer {
   display: flex;
   justify-content: center;
-  align-items: center;
   position: relative;
+  align-items: flex-end;
 }
 
 .icons {
+  font-size: 2vw;
   display: flex;
   justify-content: center;
   margin: 1vw;
@@ -107,4 +108,9 @@ footer {
 
 i {
   color: #2196f3;
+  font-size: 4vw;
+}
+.abajo{
+  margin-top:3vw;
+  padding:1vw;
 }
