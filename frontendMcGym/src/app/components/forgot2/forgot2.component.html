@@ -21,12 +21,12 @@
     </div>
 <div class="container principal">
     <div class="recu">
-        <form class="form">
+        <form #forgot2Form = "ngForm" (ngSubmit)="resforgot2(forgot2Form)">
             <div class="form-group">
                 <h1>Ayuda de contraseña</h1>
                 <p>Introduzca la nueva contraseña para tu cuenta de McGym y asi realizar el cambio.</p>
                 <label for="exampleInputEmail1">Nueva contraseña</label>
-                <input type="password" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Contraseña">
+                <input required #password="ngModel"  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name = "password" ngModel type="password" class="form-control" placeholder="Password" ngModel required>
                 <small id="emailHelp" class="form-text text-muted">Recuerda que la contraseña ha de contener minimo 8 caracteres</small>
             </div>
             <button type="submit" class="btn btn-primary">Cambiar contraseña!</button>

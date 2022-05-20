@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { AbstractControl, NgForm } from '@angular/forms';
+import { Pass } from 'src/app/models/pass';
+import { NgModel } from '@angular/forms';
+import { EmplogService } from 'src/app/services/emplog.service';
+
 
 @Component({
   selector: 'app-forgot2',
@@ -7,9 +13,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Forgot2Component implements OnInit {
 
-  constructor() { }
+
+
+  constructor(public CookieService: CookieService, public Emplog:EmplogService) { }
 
   ngOnInit(): void {
+    console.log("aa")
+    console.log(this.CookieService.get("email"))
   }
+  
+  resforgot2(Form: NgForm){
+    var email = this.CookieService.get("email")
+    console.log(Form.value.password)
+    if (this.Emplog.isCliente(email)){
+      
+    }else if(this.Emplog.isEmpleado(email)){
+
+    }else{
+      alert("el correo almacenado para el cambio de contraseña no existe")
+    }
+  }
+
+
+
+
 
 }
