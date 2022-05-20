@@ -29,7 +29,7 @@ carrito.getCarrito = async (req, res, next) => {
 
 carrito.editCarrito = async (req, res, next) => {
   const { id } = req.params;
-  await Cliente.findByIdAndUpdate(id, {$set: req.body});
+  await Carrito.findByIdAndUpdate(id, {$set: req.body});
   res.json({ status: "Carrito Updated" });
 };
 
