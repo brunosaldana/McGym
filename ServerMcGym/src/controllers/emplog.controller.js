@@ -90,11 +90,4 @@ empleado.resPass = async (req, res, next) => {
 
 module.exports = empleado;
 
-// const isEmpleado = await empleados.findOne({ _id: req.body._id });
-// if (isEmpleado) {
-//   res.json({ success: true });
-//   console.log("entro en id exists");
-// } else {
-//   // res.json({ success: false });
-//   res.status(404).json({ message: "Empleado not found" });
-// }
+

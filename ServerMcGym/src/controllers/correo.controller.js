@@ -40,14 +40,6 @@ token.envioCorreo = (req = request, res = response) => {
   });
 };
 
-// token.createToken = async (req, res, next) => {
-//   console.log("tokencito");
-//   const token = new Token({
-//     token: this.accessToken,
-//     email: req.body.email,
-//   });
-//   await token.save();
-//   res.json({ status: "Token creado" });
-// };
+
 
 module.exports = token;
