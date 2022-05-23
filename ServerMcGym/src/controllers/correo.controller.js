@@ -25,11 +25,7 @@ token.envioCorreo = (req = request, res = response) => {
     to: body.email,
     text:
       "Estimado cliente. " +
-<<<<<<< HEAD
-      "Hemos recibido un correo en el que sugiere un pequenio cambio de contraseña. " +
-=======
-      "Hemos recibido un correo en el que sugire un pequajsvdjabsdabsdjaeño cambio de contraseña. " +
->>>>>>> 650f7874264117c4c9ff399490af30e068678035
+      "Hemos recibido un correo en el que sugire un cambio de contraseña. " +
       " En este enlace podrás hacerlo: " +
       enlace +
       accessToken,
