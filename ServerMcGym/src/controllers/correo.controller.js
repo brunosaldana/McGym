@@ -20,7 +20,7 @@ const envioCorreo = (req = request, res = response) => {
     to: body.email,
     text:
       "Estimado cliente. " +
-      "Hemos recibido un correo en el que sugiere un cambio de contraseña. " +
+      "Hemos recibido un correo en el que sugiere un pequenio cambio de contraseña. " +
       " En este enlace podrás hacerlo: " +
       enlace,
   };
