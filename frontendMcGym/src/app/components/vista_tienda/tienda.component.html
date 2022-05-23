@@ -16,7 +16,7 @@
                 <img id="logo" src="/assets/McgymLogo.png" >
             </div>
             <div class="title">
-                <h2>MIS RESERVAS</h2>
+                <h2>TIENDA</h2>
             </div>
             <div class="links">
                 <a href="/micarrito"><i class="fa-solid fa fa-cart-arrow-down"></i></a>
@@ -42,61 +42,53 @@
             </div>
         </div>
         <div class="fondo">
-            <h2 class="text-center">Actividades Disponibles</h2>
+            <h2 class="text-center">Productos Disponibles</h2>
             <div class = "col-md-19">
                 <table class="col-10">
                     <thead>
                         <tr> 
                             <th>
-                                <h3 class="color">Nombre de la Actividad</h3>
+                                <h3 class="color">Nombre del producto</h3>
                             </th>
                             <th>
-                                <h3 class="color">Monitor</h3>
+                                <h3 class="color">Precio</h3>
                             </th>
                             <th>
-                                <h3 class="color">Dia</h3>
-                            </th>
-                            <th>
-                                <h3 class="color">Hora</h3>
-                            </th>
-                            <th>
-                                <h3 class="color">Duracion</h3>
+                                <h3 class="color">Descripcion</h3>
                             </th>
                         </tr>
                     </thead>
                     <br><br>
                     <tbody>
-                        <tr *ngFor ="let misActividades of misActividadesService.misActividades">
-                            <td><p>{{ misActividades.name }}</p></td>
-                            <td><p>{{ misActividades.impartemon}}</p></td>
-                            <td><p>{{ misActividades.dia}}</p></td>
-                            <td><p>{{ misActividades.hora}}</p></td>
-                            <td><p>{{ misActividades.duracion }}</p></td>
-                            <td type="button" (click)="deleteReserva(misActividades)" class="btn btn-primary btn-sm"> Cancelar reserva </td>
+                        <tr *ngFor ="let producto of CarritoService.carrito">
+                            <td><p>{{ producto.name }}</p></td>
+                            <td><p>{{ producto.descripcion}}</p></td>
+                            <td><p>{{ producto.precio}}</p></td>
+
+                            <td type="button"(click)="add(producto)"  class="btn btn-primary btn-sm"> Añadir producto</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="abajo">
 
-            <div class="icons">
-                <a class="a" href="https://twitter.com/elonmusk"><i class="fa-brands fa fa-twitter" style="font-size:4vw;" ></i></a>
-                <a class="a" href="google.es"><i class="fa-brands fa fa-facebook" style="font-size:4vw;"></i></a>
-                <a class="a" href="google.es"><i class="fa-brands fa fa-github" style="font-size:4vw;"></i></a>
-                <a class="a" href="google.es"><i class="fa-brands fa fa-linkedin" style="font-size:4vw;"></i></a>
-            </div>
-        
-            <footer>
-                <div class="footer">
-                    <div>
-                        <h4 class="footer-text">Nuestras redes</h4>
-                        <a href="/terminos_condiciones">Terminos y condiciones</a>
-                    </div>
-                </div>
-            </footer>
+        <div class="icons">
+            <a class="a" href="https://twitter.com/elonmusk"><i class="fa-brands fa fa-twitter" style="font-size:4vw;" ></i></a>
+            <a class="a" href="google.es"><i class="fa-brands fa fa-facebook" style="font-size:4vw;"></i></a>
+            <a class="a" href="google.es"><i class="fa-brands fa fa-github" style="font-size:4vw;"></i></a>
+            <a class="a" href="google.es"><i class="fa-brands fa fa-linkedin" style="font-size:4vw;"></i></a>
         </div>
+    
+        <footer>
+            <div class="footer">
+                <div>
+                    <h4 class="footer-text">Nuestras redes</h4>
+                    <a href="/terminos_condiciones">Terminos y condiciones</a>
+
+                </div>
+            </div>
+        </footer>
 
     </div>
 </body>

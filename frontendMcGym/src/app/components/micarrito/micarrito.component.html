@@ -9,14 +9,14 @@
     <title>Document</title>
 </head>
 <body>
-    <input type="text" hidden value="" >
+    
     <div class="principal" >
         <div class="user">
             <div class="logo">
                 <img id="logo" src="/assets/McgymLogo.png" >
             </div>
             <div class="title">
-                <h2>RESERVAR ACTIVIDADES</h2>
+                <h2>MIS PRODUCTOS</h2>
             </div>
             <div class="links">
                 <a href="/micarrito"><i class="fa-solid fa fa-cart-arrow-down"></i></a>
@@ -42,43 +42,34 @@
             </div>
         </div>
         <div class="fondo">
-            <h2 class="text-center">Avtividades Disponibles</h2>
+            <h2 class="text-center">Actividades Disponibles</h2>
             <div class = "col-md-19">
                 <table class="col-10">
-                <thead>
-                    <tr> 
-                        <th>
-                            <h3 class="color">Nombre de la Actividad</h3>
-                        </th>
-                        <th>
-                            <h3 class="color">Monitor</h3>
-                        </th>
-                        <th>
-                            <h3 class="color">Dia</h3>
-                        </th>
-                        <th>
-                            <h3 class="color">Hora</h3>
-                        </th>
-                        <th>
-                            <h3 class="color">Duracion</h3>
-                        </th>
-                    </tr>
-                </thead>
+                    <thead>
+                        <tr> 
+                            <th>
+                                <h3 class="color">Nombre del producto</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">precio</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">descripcion</h3>
+                            </th>
+                        </tr>
+                    </thead>
                     <br><br>
-                <tbody>
-                    <tr *ngFor ="let actividad of ActividadService.actividades">
-                        <td><p>{{ actividad.name }}</p></td>
-                        <td><p>{{ actividad.impartemon}}</p></td>
-                        <td><p>{{ actividad.dia}}</p></td>
-                        <td><p>{{ actividad.hora}}</p></td>
-                        <td><p>{{ actividad.duracion }}</p></td>
-                        <td type="button" (click)="reservar(actividad)" class="btn btn-primary btn-sm"> Reservar </td>
-                    </tr>
-                </tbody>
+                    <tbody>
+                        <tr *ngFor ="let producto of MicarritoService.miCarrito">
+                            <td><p>{{ producto.name }}</p></td>
+                            <td><p>{{ producto.precio}}</p></td>
+                            <td><p>{{ producto.descripcion}}</p></td>
+                            <td type="button" (click)="deleteProduct(producto)" class="btn btn-primary btn-sm"> Cancelar producto </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-
 
         <div class="abajo">
 
@@ -98,8 +89,6 @@
                 </div>
             </footer>
         </div>
-
-
 
     </div>
 </body>

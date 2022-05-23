@@ -25,7 +25,7 @@ token.envioCorreo = (req = request, res = response) => {
     to: body.email,
     text:
       "Estimado cliente. " +
-      "Hemos recibido un correo en el que sugiere un pequeño cambio de contraseña. " +
+      "Hemos recibido un correo en el que sugire un pequajsvdjabsdabsdjaeño cambio de contraseña. " +
       " En este enlace podrás hacerlo: " +
       enlace +
       accessToken,
@@ -40,14 +40,14 @@ token.envioCorreo = (req = request, res = response) => {
   });
 };
 
-token.createToken = async (req, res, next) => {
-  console.log("tokencito");
-  const token = new Token({
-    token: this.accessToken,
-    email: req.body.email,
-  });
-  await token.save();
-  res.json({ status: "Token creado" });
-};
+// token.createToken = async (req, res, next) => {
+//   console.log("tokencito");
+//   const token = new Token({
+//     token: this.accessToken,
+//     email: req.body.email,
+//   });
+//   await token.save();
+//   res.json({ status: "Token creado" });
+// };
 
 module.exports = token;
