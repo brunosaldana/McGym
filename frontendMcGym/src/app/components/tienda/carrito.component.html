@@ -1,0 +1,74 @@
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/carrito">CARRITO</a>
+    </div>
+  </nav>
+<div class = "row">
+    <div class = "col-md-4">
+        <div class = "card">
+            <div class = "card-body">
+                <h1> AÑADIR PRODUCTO</h1>
+                <form #carritoForm = "ngForm" (ngSubmit)="addCarrito(carritoForm)" (ngSubmit)="validation(carritoForm)">
+                    <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="CarritoService.selectedCarrito._id">                    
+                    <div class="form-group" >
+                        <input required #name = "ngModel" [(ngModel)]="CarritoService.selectedCarrito.name" name = "name" ngModel="name" type="text" class="form-control" placeholder="Nombre" ngModel required>
+                        <div *ngIf ="name.touched && name.invalid" class="alert alert-danger">
+                            NOMBRE requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #precio="ngModel" [(ngModel)]="CarritoService.selectedCarrito.precio" name = "precio" ngModel="precio" type="text" class="form-control" placeholder="Precio" ngModel required>
+                        <div *ngIf ="precio.touched && precio.invalid" class="alert alert-danger">
+                            PRECIO requerido
+                        </div>
+                    </div>
+                    <div class="form-group" >
+                        <input required #descripcion="ngModel" [(ngModel)]="CarritoService.selectedCarrito.descripcion" name = "descripcion" ngModel="descripcion" type="text" class="form-control" placeholder="Descripción" ngModel required>
+                        <div *ngIf ="descripcion.touched && descripcion.invalid" class="alert alert-danger">
+                         DESCRIPCIÓN requerido
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    </div>
+                    <button type="submit" class="btn btn-secondary" [attr.disabled]="!carritoForm.valid ? true : null" >Save</button>
+                </form>
+                <button class="btn btn-primary mr-2" (click)="resetForm(carritoForm)">Clean</button>
+            </div>
+        </div>
+    </div>
+    <div class = "col-md-8">
+        <table class="table">
+            <thead>
+                <tr> 
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Descripcion
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor ="let carrito of CarritoService.carrito">
+                    <td>{{ carrito.name }}</td>
+                    <td>{{ carrito.precio}}</td>
+                    <td>{{ carrito.descripcion}}</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" (click)="editCarrito(carrito)"> 
+                            <i class="material-icons"> edit </i>  
+                        </button>
+                        <button class="btn btn-danger btn-sm" (click)="deleteCarrito(carrito._id)"> 
+                            <i class="material-icons"> delete </i>  
+                        </button>
+                    </td>
+                </tr>
+                    
+            </tbody>
+        </table>
+
+
+</div>
+<a class="btn btn-dark" type="button" href="/main"><button class="control backlink">INICIO</button></a>

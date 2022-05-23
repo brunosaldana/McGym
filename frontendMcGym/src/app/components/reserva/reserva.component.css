@@ -1,19 +1,12 @@
-html {
+html,
+body {
   min-height: 100vh;
-}
-
-.footer-principal {
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 10vw;
 }
 
 /* heder */
 body {
   background: rgb(235, 61, 61);
 }
-
 .fondo {
   background-color: rgb(255, 190, 190);
 }
@@ -45,29 +38,26 @@ body {
 .fa-solid {
   font-size: 2vw;
 }
+
 h2 {
   width: 100%;
 }
+
 .title {
-  color: white;
   width: 100%;
   margin-top: 2%;
   margin-left: 17vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
-i {
-  color: rgba(0, 0, 0, 0.774);
-}
-
 /* heder */
 
 /* bar */
 .bar {
   padding: 1vw;
 }
-
 .redirects {
   display: flex;
   justify-content: center;
@@ -77,6 +67,10 @@ i {
 }
 
 /* bar */
+
+i {
+  color: rgba(0, 0, 0, 0.774);
+}
 
 /* body */
 td,
@@ -97,11 +91,12 @@ a:hover {
   letter-spacing: 1px;
 }
 
+
 /* footer */
 footer {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   position: relative;
 }
 
@@ -113,4 +108,9 @@ footer {
 
 i {
   color: #2196f3;
+}
+
+.abajo{
+  margin-top:3vw;
+  padding:1vw;
 }

@@ -22,7 +22,9 @@ import { misActividadesComponent } from './components/misActividades/misActivida
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
-import { TiendaComponent } from './components/tienda/tienda.component';
+import { TiendaComponent } from './components/vista_tienda/tienda.component';
+import { CarritoComponent } from './components/tienda/carrito.component';
+import { MicarritoComponent } from './components/micarrito/micarrito.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +44,8 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     VistatareasComponent,
     TermsConditionsComponent,
     TiendaComponent,
+    CarritoComponent,
+    MicarritoComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,6 +59,12 @@ import { TiendaComponent } from './components/tienda/tienda.component';
     RouterModule.forRoot([
       {path: '', component:
       InicioComponent},
+      {path: 'tienda', component:
+      CarritoComponent},
+      {path: 'vistaTienda', component:
+      TiendaComponent},
+      {path: 'micarrito', component:
+      MicarritoComponent},
       {path: 'tareas', component:
       TareaComponent},
       {path: 'vistatareas', component:
@@ -65,7 +75,7 @@ import { TiendaComponent } from './components/tienda/tienda.component';
       ClienteComponent},
       {path: 'forgot1', component:
       Forgot1Component},
-      {path: 'forgot2', component:
+      {path: 'forgot2/:token', component:
       Forgot2Component},
       {path: 'main', component:
       MainComponent},
@@ -77,8 +87,6 @@ import { TiendaComponent } from './components/tienda/tienda.component';
       ActividadesComponent},
       {path: 'terminos_condiciones', component:
       TermsConditionsComponent},
-      {path: 'tienda', component:
-      TiendaComponent},
       {path: '**', component:
       PageNotFoundComponent},
     ])

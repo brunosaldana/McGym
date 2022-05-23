@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="principal" >
+        <div class="user">
+            <div class="logo">
+                <img id="logo" src="/assets/McgymLogo.png" >
+            </div>
+            <div class="title">
+                <h2>MIS PRODUCTOS</h2>
+            </div>
+            <div class="links">
+                <a href="/micarrito"><i class="fa-solid fa fa-cart-arrow-down"></i></a>
+                <!-- <a href=""><i class="fa-solid fa fa-user"></i></a> -->
+                <a href="" (click)="salir()"><i class="fa-solid fa fa-arrow-right"></i></a>            
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-3 bar"> 
+                    <a class="btn btn-primary redirects" href="/main" role="button">Inicio</a>
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary redirects" href="/reserva" role="button">Reservar</a>
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary redirects" href="/misActividades" role="button">Mis Actividades</a>  
+                </div>
+                <div class="col-3 bar">
+                    <a class="btn btn-primary redirects" href="/vistaTienda" role="button">Tienda</a>  
+                </div>
+            </div>
+        </div>
+        <div class="fondo">
+            <h2 class="text-center">Actividades Disponibles</h2>
+            <div class = "col-md-19">
+                <table class="col-10">
+                    <thead>
+                        <tr> 
+                            <th>
+                                <h3 class="color">Nombre del producto</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">precio</h3>
+                            </th>
+                            <th>
+                                <h3 class="color">descripcion</h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <br><br>
+                    <tbody>
+                        <tr *ngFor ="let producto of MicarritoService.miCarrito">
+                            <td><p>{{ producto.name }}</p></td>
+                            <td><p>{{ producto.precio}}</p></td>
+                            <td><p>{{ producto.descripcion}}</p></td>
+                            <td type="button" (click)="deleteProduct(producto)" class="btn btn-primary btn-sm"> Cancelar producto </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="abajo">
+
+            <div class="icons">
+                <a class="a" href="https://twitter.com/elonmusk"><i class="fa-brands fa fa-twitter" style="font-size:4vw;" ></i></a>
+                <a class="a" href="google.es"><i class="fa-brands fa fa-facebook" style="font-size:4vw;"></i></a>
+                <a class="a" href="google.es"><i class="fa-brands fa fa-github" style="font-size:4vw;"></i></a>
+                <a class="a" href="google.es"><i class="fa-brands fa fa-linkedin" style="font-size:4vw;"></i></a>
+            </div>
+        
+            <footer>
+                <div class="footer">
+                    <div>
+                        <h4 class="footer-text">Nuestras redes</h4>
+                        <a href="/terminos_condiciones">Terminos y condiciones</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
