@@ -36,14 +36,10 @@ export class Forgot1Component implements OnInit {
 
   
   reset1(_form: NgForm){
-    //this.CookieService.set('email', _form.value.email)
     const cookieValue = this.CookieService.set("email", _form.value.email)
     const cookieValue2 = this.CookieService.get("email")
     this.EmplogService.isEmpleado(cookieValue2).subscribe(
       res => {
-        console.log("---------")
-        console.log(res)
-        console.log("---------")  
         if(res){
           this.acceso = true
           this.EmailService.envioCorreo({email: _form.value.email}).subscribe(res =>{ 

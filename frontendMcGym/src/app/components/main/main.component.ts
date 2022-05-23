@@ -68,18 +68,6 @@ export class MainComponent implements OnInit {
     this.cookieService.delete('sesion-token')
   }
 
-  esadmin(){
-    // var cookieValue = this.cookieService.get("sesion-token")
-
-    //   if(this.EmplogService.isMonitor(cookieValue)){
-    //       console.log("Sí!!!!")
-    //       console.log(cookieValue+" cookie");
-    //       this.router.navigate(["/actividades"])
-    //     } else {
-    //       console.log("Nooooooo :-(")
-    //       this.router.navigate(["/main"])
-    //     }
-    }
 
 
 }

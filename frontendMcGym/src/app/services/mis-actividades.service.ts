@@ -52,9 +52,5 @@ controls: any;
   }
 
 
-  // putReserva(actividad:Actividad){
-  //   const cid = this.cookieService.get('sesion-token')
-  //   return this.http.put(this.URL_API + `/${actividad._id}`, actividad);
-  // }
 
 }
