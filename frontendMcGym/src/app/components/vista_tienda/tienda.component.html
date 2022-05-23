@@ -16,10 +16,10 @@
                 <img id="logo" src="/assets/McgymLogo.png" >
             </div>
             <div class="title">
-                <h2>MI CARRITO</h2>
+                <h2>TIENDA</h2>
             </div>
             <div class="links">
-                <a href=""><i class="fa-solid fa fa-cart-arrow-down"></i></a>
+                <a href="/micarrito"><i class="fa-solid fa fa-cart-arrow-down"></i></a>
                 <!-- <a href=""><i class="fa-solid fa fa-user"></i></a> -->
                 <a href="" (click)="salir()"><i class="fa-solid fa fa-arrow-right"></i></a>            
             </div>
@@ -37,7 +37,7 @@
                     <a class="btn btn-primary redirects" href="/misActividades" role="button">Mis Actividades</a>  
                 </div>
                 <div class="col-3 bar">
-                    <a class="btn btn-primary redirects" href="/tienda" role="button">Tienda</a>  
+                    <a class="btn btn-primary redirects" href="/vistaTienda" role="button">Tienda</a>  
                 </div>
             </div>
         </div>
@@ -60,12 +60,12 @@
                     </thead>
                     <br><br>
                     <tbody>
-                        <tr *ngFor ="let miCarrito of miCarritoService.miCarrito">
-                            <td><p>{{ miCarrito.name }}</p></td>
-                            <td><p>{{ miCarrito.impartemon}}</p></td>
-                            <td><p>{{ miCarrito.dia}}</p></td>
+                        <tr *ngFor ="let producto of CarritoService.carrito">
+                            <td><p>{{ producto.name }}</p></td>
+                            <td><p>{{ producto.descripcion}}</p></td>
+                            <td><p>{{ producto.precio}}</p></td>
 
-                            <td type="button" (click)="deleteMiCarrito(miCarrito)" class="btn btn-primary btn-sm"> Cancelar Producto </td>
+                            <td type="button"(click)="add(producto)"  class="btn btn-primary btn-sm"> Añadir producto</td>
                         </tr>
                     </tbody>
                 </table>
@@ -84,6 +84,8 @@
             <div class="footer">
                 <div>
                     <h4 class="footer-text">Nuestras redes</h4>
+                    <a href="/terminos_condiciones">Terminos y condiciones</a>
+
                 </div>
             </div>
         </footer>

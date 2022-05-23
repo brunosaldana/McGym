@@ -43,7 +43,9 @@ export class misActividadesComponent implements OnInit {
     },
     (err) => console.error(err)
     );
+    alert("Reserva Cancelada con exito")
   }
+
 }
 
 

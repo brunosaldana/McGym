@@ -1,12 +1,13 @@
-const Micarrito = require("../models/miCarrito");
+const Micarrito = require("../models/carrito");
 
 const micarrito = {};
 
 
 
-micarrito.getMicarrito = async (req, res) => {
-  const micarrito = await Micarrito.find({cliId: req.params.id});
-  res.json(micarrito);
+micarrito.getproducts = async (req, res, next) => {
+  const productos = await Micarrito.find();
+  console.log(res)
+  res.json(productos);
 };
 
 micarrito.createMicarrito = async (req, res, next) => {

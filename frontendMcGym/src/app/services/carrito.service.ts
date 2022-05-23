@@ -11,8 +11,7 @@ export class CarritoService {
 
   [x: string]: any;
   
-  URL_API2 = environment.api + '/tienda';
-  URL_API = "http://localhost:4000" + '/tienda';
+  URL_API = environment.api + '/tienda';
 
 
   selectedCarrito: Carrito = {

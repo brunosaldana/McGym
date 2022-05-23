@@ -47,18 +47,7 @@ export class ReservaComponent implements OnInit {
   }
 
   reservar(actividad:Actividad){
-    // var u = JSON.stringify(actividad);
-    // var e = JSON.parse(u);
-    // if(e._id) {
-    //   this.misActividadesService.putReserva(e).subscribe(
-    //     res =>{ 
-    //       console.log(res)
-    //       location.reload();
-    //     },
-    //     (err) => console.error(err)
-        
-    //   )
-    // } else {
+
       var u = JSON.stringify(actividad);
       var e = JSON.parse(u);
       console.log(u)
@@ -70,7 +59,9 @@ export class ReservaComponent implements OnInit {
       err => console.log(err)
     
   );
-  // }
+  alert("Reserva Realizada")
+
+
   }
 
 

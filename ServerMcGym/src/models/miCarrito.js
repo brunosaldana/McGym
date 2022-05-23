@@ -7,6 +7,8 @@ const miCarritoSchema = new Schema(
     name : {type: String, required: true},
     descripcion : {type: String, required: true},
     precio : {type: String, required: true},
+    cliId : {type: String, required: true},
+
 
 
 

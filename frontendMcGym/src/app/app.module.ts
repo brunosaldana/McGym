@@ -22,8 +22,9 @@ import { misActividadesComponent } from './components/misActividades/misActivida
 import { ActividadesComponent } from './components/actividades/actividades.component';
 import { VistatareasComponent } from './components/vistatareas/vistatareas.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
-import { TiendaComponent } from './components/mi_carrito/tienda.component';
-import { CarritoComponent } from './components/carrito/carrito.component';
+import { TiendaComponent } from './components/vista_tienda/tienda.component';
+import { CarritoComponent } from './components/tienda/carrito.component';
+import { MicarritoComponent } from './components/micarrito/micarrito.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { CarritoComponent } from './components/carrito/carrito.component';
     TermsConditionsComponent,
     TiendaComponent,
     CarritoComponent,
+    MicarritoComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +61,10 @@ import { CarritoComponent } from './components/carrito/carrito.component';
       InicioComponent},
       {path: 'tienda', component:
       CarritoComponent},
+      {path: 'vistaTienda', component:
+      TiendaComponent},
+      {path: 'micarrito', component:
+      MicarritoComponent},
       {path: 'tareas', component:
       TareaComponent},
       {path: 'vistatareas', component:
