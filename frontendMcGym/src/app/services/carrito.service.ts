@@ -9,8 +9,6 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class CarritoService {
 
-  [x: string]: any;
-  
   URL_API = environment.api + '/tienda';
 
 
