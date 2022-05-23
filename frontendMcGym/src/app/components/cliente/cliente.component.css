@@ -1,0 +1,27 @@
+.alert-danger{
+    background-color: indianred;
+}
+
+.alert{
+    color: black;
+}
+
+.busquedacliente{
+    color: aliceblue;
+    margin-left: 1vw;
+}
+
+html,
+body,.row {
+  min-height: 100vh;
+  background-color: rgb(235, 61, 61);
+}
+
+table{
+    color:rgb(0, 0, 0);
+}
+
+.card-body{
+  background-color: rgba(235, 98, 98, 0.445);
+    
+}
