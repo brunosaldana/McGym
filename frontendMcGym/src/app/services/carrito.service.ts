@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 })
 export class CarritoService {
 
-  URL_API = 'http://localhost:4000/tienda';
+  URL_API = 'http://157.90.225.116/:4000/tienda';
 
 
   selectedCarrito: Carrito = {
